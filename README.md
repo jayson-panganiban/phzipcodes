@@ -1,0 +1,2 @@
+# phzipcodes
+Philippines zip codes
