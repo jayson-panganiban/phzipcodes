@@ -26,6 +26,3 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 phzipcodes = "phzipcodes:app"
-
-[tool.poetry.package-data]
-phzipcodes = ["data/*.json"]
