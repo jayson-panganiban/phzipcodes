@@ -1,0 +1,4320 @@
+{
+  "Region 1 (Ilocos Region)": {
+    "Pangasinan": {
+      "Alcala": [
+        "2425"
+      ],
+      "Alaminos": [
+        "2404"
+      ],
+      "Agno": [
+        "2408"
+      ],
+      "Anda": [
+        "2405"
+      ],
+      "Aguilar": [
+        "2415"
+      ],
+      "Sual": [
+        "2403"
+      ],
+      "Tayug": [
+        "2445"
+      ],
+      "Umingan": [
+        "2443"
+      ],
+      "Urbiztondo": [
+        "2414"
+      ],
+      "Urdaneta": [
+        "2428"
+      ],
+      "Villasis": [
+        "2427"
+      ],
+      "Santa Barbara": [
+        "2419"
+      ],
+      "Santa Maria": [
+        "2440"
+      ],
+      "Santo Tomas": [
+        "2426"
+      ],
+      "San Quintin": [
+        "2444"
+      ],
+      "San Nicolas": [
+        "2447"
+      ],
+      "Sison": [
+        "2434"
+      ],
+      "San Manuel": [
+        "2438"
+      ],
+      "San Jacinto": [
+        "2431"
+      ],
+      "San Fabian": [
+        "2433"
+      ],
+      "San Carlos City": [
+        "2420"
+      ],
+      "Rosales": [
+        "2441"
+      ],
+      "Pozorrubio": [
+        "2435"
+      ],
+      "Natividad": [
+        "2446"
+      ],
+      "Mapandan": [
+        "2429"
+      ],
+      "Mangatarem": [
+        "2413"
+      ],
+      "Mangaldan": [
+        "2432"
+      ]
+    },
+    "La Union": {
+      "Tubao": [
+        "2509"
+      ],
+      "Sudipen": [
+        "2520"
+      ],
+      "Santo Tomas": [
+        "2505"
+      ],
+      "Santol": [
+        "2516"
+      ],
+      "San Juan": [
+        "2514"
+      ],
+      "San Gabriel": [
+        "2513"
+      ],
+      "San Fernando City": [
+        "2500"
+      ],
+      "Rosario": [
+        "2506"
+      ],
+      "Pugo": [
+        "2508"
+      ],
+      "Naguilian": [
+        "2511"
+      ],
+      "Luna": [
+        "2518"
+      ],
+      "Caba": [
+        "2502"
+      ],
+      "Burgos": [
+        "2510"
+      ],
+      "Bauang": [
+        "2501"
+      ],
+      "Bangar": [
+        "2519"
+      ],
+      "Balaoan": [
+        "2517"
+      ],
+      "Bagulin": [
+        "2512"
+      ],
+      "Bacnotan": [
+        "2515"
+      ],
+      "Aringay": [
+        "2503"
+      ],
+      "Agoo": [
+        "2504"
+      ]
+    },
+    "Ilocos Sur": {
+      "Vigan": [
+        "2700"
+      ],
+      "Tagudin": [
+        "2714"
+      ],
+      "Suyo": [
+        "2715"
+      ],
+      "Sugpon": [
+        "2717"
+      ],
+      "Sinait": [
+        "2733"
+      ],
+      "Sigay": [
+        "2719"
+      ],
+      "Santo Domingo": [
+        "2729"
+      ],
+      "Santiago": [
+        "2707"
+      ],
+      "Santa Maria": [
+        "2705"
+      ],
+      "Santa Lucia": [
+        "2712"
+      ],
+      "Santa Cruz": [
+        "2713"
+      ],
+      "Santa Catalina": [
+        "2701"
+      ],
+      "Santa": [
+        "2703"
+      ],
+      "San Vicente": [
+        "2726"
+      ],
+      "San Juan (Lapog)": [
+        "2731"
+      ],
+      "San Ildefonso": [
+        "2728"
+      ],
+      "San Esteban": [
+        "2706"
+      ],
+      "San Emilio": [
+        "2722"
+      ],
+      "Salcedo (Baugen)": [
+        "2711"
+      ],
+      "Quirino (Angkaki)": [
+        "2721"
+      ],
+      "Narvacan": [
+        "2704"
+      ],
+      "Nagbukel": [
+        "2725"
+      ],
+      "Magsingal": [
+        "2730"
+      ],
+      "Lidlidda": [
+        "2723"
+      ],
+      "Gregorio del Pilar (Concepcion)": [
+        "2720"
+      ],
+      "Galimuyod": [
+        "2709"
+      ],
+      "Cervantes": [
+        "2718"
+      ],
+      "Caoayan": [
+        "2702"
+      ],
+      "Candon": [
+        "2710"
+      ],
+      "Cabugao": [
+        "2732"
+      ],
+      "Burgos": [
+        "2724"
+      ],
+      "Bantay": [
+        "2727"
+      ],
+      "Banayoyo": [
+        "2708"
+      ],
+      "Alilem": [
+        "2716"
+      ]
+    },
+    "Ilocos Norte": {
+      "Vintar": [
+        "2915"
+      ],
+      "Solsona": [
+        "2910"
+      ],
+      "Sarrat": [
+        "2914"
+      ],
+      "San Nicolas": [
+        "2901"
+      ],
+      "Pinili": [
+        "2905"
+      ],
+      "Piddig": [
+        "2912"
+      ],
+      "Pasuquin": [
+        "2917"
+      ],
+      "Paoay": [
+        "2902"
+      ],
+      "Pagudpud": [
+        "2919"
+      ],
+      "Nueva Era": [
+        "2909"
+      ],
+      "Marcos": [
+        "2907"
+      ],
+      "Laoag City": [
+        "2900"
+      ],
+      "Banna (formerly Espiritu)": [
+        "2908"
+      ],
+      "Dumalneg": [
+        "2921"
+      ],
+      "Dingras": [
+        "2913"
+      ],
+      "Currimao": [
+        "2903"
+      ],
+      "Carasi": [
+        "2911"
+      ],
+      "Burgos": [
+        "2918"
+      ],
+      "Batac": [
+        "2906"
+      ],
+      "Bangui": [
+        "2920"
+      ],
+      "Badoc": [
+        "2904"
+      ],
+      "Bacarra": [
+        "2916"
+      ],
+      "Adams": [
+        "2922"
+      ]
+    }
+  },
+  "NCR (National Capital Region)": {
+    "Metro Manila": {
+      "Valenzuela P.O. Boxes": [
+        "1469"
+      ],
+      "Malinta CPO": [
+        "1440"
+      ],
+      "Mapulang Lupa": [
+        "1448"
+      ],
+      "Lingunan": [
+        "1446"
+      ],
+      "Karuhatan": [
+        "1441"
+      ],
+      "Fortune Vil. - Paso De Blas - Gen. T. De Leon": [
+        "1442"
+      ],
+      "East Canumay - Lawang Bato Pun": [
+        "1447"
+      ],
+      "Dalandan - West Canumay": [
+        "1443"
+      ],
+      "Balangkas-Caloong": [
+        "1445"
+      ],
+      "Arkong Bato-Rincon-Pasolo-Malanday-Mabolo-Polo": [
+        "1444"
+      ],
+      "Ususan": [
+        "1639"
+      ],
+      "Tuktukan": [
+        "1637"
+      ],
+      "Bonifacio Global City": [
+        "1635"
+      ],
+      "Bicutan Western": [
+        "1630"
+      ],
+      "Bicutan Upper": [
+        "1633"
+      ],
+      "Bicutan Lower": [
+        "1632"
+      ],
+      "Bicutan": [
+        "1631"
+      ],
+      "Bay Breeze Exec. Village": [
+        "1636"
+      ],
+      "San Juan CPO": [
+        "1500"
+      ],
+      "Greenhills PO": [
+        "1502"
+      ],
+      "Greenhills North": [
+        "1503"
+      ],
+      "Eisenhower-Crame": [
+        "1504"
+      ],
+      "Villa Maria Clara": [
+        "1109"
+      ],
+      "Veterans Village": [
+        "1105"
+      ],
+      "Vasra": [
+        "1128"
+      ],
+      "Valencia": [
+        "1112"
+      ],
+      "UP Village": [
+        "1101"
+      ],
+      "Univ. of the Phils. PO": [
+        "1101"
+      ],
+      "Unang Sigaw": [
+        "1106"
+      ],
+      "Ugong Norte": [
+        "1110"
+      ],
+      "Teachers Village": [
+        "1101"
+      ],
+      "Tatalon": [
+        "1113"
+      ],
+      "Tandang Sora": [
+        "1116"
+      ],
+      "Talipapa": [
+        "1116"
+      ],
+      "Talayan": [
+        "1104"
+      ],
+      "Talampas": [
+        "1110"
+      ],
+      "Tagumpay": [
+        "1109"
+      ],
+      "Sto. Nino": [
+        "1113",
+        "1704"
+      ],
+      "Sto. Cristo": [
+        "1105"
+      ],
+      "St. Peter": [
+        "1114"
+      ],
+      "St. Martin De Porres": [
+        "1111"
+      ],
+      "St. Ignatius": [
+        "1110"
+      ],
+      "South Triangle": [
+        "1103"
+      ],
+      "Socorro": [
+        "1109"
+      ],
+      "Silangan": [
+        "1102"
+      ],
+      "Sikatuna Village": [
+        "1101"
+      ],
+      "Sienna": [
+        "1114"
+      ],
+      "Sauyo": [
+        "1116"
+      ],
+      "Santa Teresita": [
+        "1114"
+      ],
+      "Santa Monica": [
+        "1117"
+      ],
+      "Santa Lucia": [
+        "1117"
+      ],
+      "Santa Cruz": [
+        "1104"
+      ],
+      "Sangandaan": [
+        "1116",
+        "1408"
+      ],
+      "San Vicente": [
+        "1101"
+      ],
+      "San Roque": [
+        "1109",
+        "1303"
+      ],
+      "San Jose": [
+        "1115",
+        "1305",
+        "1404"
+      ],
+      "San Isidro Labrador": [
+        "1114"
+      ],
+      "San Isidro": [
+        "1113",
+        "1306",
+        "1234"
+      ],
+      "San Bartolome": [
+        "1116"
+      ],
+      "San Antonio": [
+        "1105"
+      ],
+      "San Agustin": [
+        "1117"
+      ],
+      "Salvacion": [
+        "1114"
+      ],
+      "Salumbato": [
+        "1106"
+      ],
+      "Sacred Heart": [
+        "1103"
+      ],
+      "Roxas District": [
+        "1103"
+      ],
+      "Ramon Magsaysay": [
+        "1105"
+      ],
+      "Quirino Dist. (Proj. 2 & 3)": [
+        "1102"
+      ],
+      "Quezon City CPO": [
+        "1100"
+      ],
+      "Project 8": [
+        "1106"
+      ],
+      "Project 7": [
+        "1105"
+      ],
+      "Project 6": [
+        "1100"
+      ],
+      "Project 4": [
+        "1109"
+      ],
+      "Piñahan": [
+        "1100"
+      ],
+      "Pinagkaisahan": [
+        "1111"
+      ],
+      "Phil-am": [
+        "1104"
+      ],
+      "Payatas": [
+        "1119"
+      ],
+      "Pasong Tamo": [
+        "1107"
+      ],
+      "Pasong Putik": [
+        "1118"
+      ],
+      "Paraiso": [
+        "1104"
+      ],
+      "Pansol": [
+        "1108"
+      ],
+      "Paltok": [
+        "1105"
+      ],
+      "Paligsahan": [
+        "1103"
+      ],
+      "Pag-ibig Sa Nayon": [
+        "1115"
+      ],
+      "Paang Bundok": [
+        "1114"
+      ],
+      "Old Capitol Site": [
+        "1101"
+      ],
+      "Obrero": [
+        "1103"
+      ],
+      "Novaliches Proper": [
+        "1121"
+      ],
+      "New Era": [
+        "1107"
+      ],
+      "Nayon Kaunlaran": [
+        "1104"
+      ],
+      "Nagkaisang Nayon": [
+        "1125"
+      ],
+      "Milagrosa": [
+        "1109"
+      ],
+      "Matandang Balara": [
+        "1119"
+      ],
+      "Matalahib": [
+        "1114"
+      ],
+      "Masambong": [
+        "1115"
+      ],
+      "Masagana": [
+        "1109"
+      ],
+      "Marilag": [
+        "1109"
+      ],
+      "Mariblo": [
+        "1104"
+      ],
+      "Mariana": [
+        "1112"
+      ],
+      "Manresa": [
+        "1115"
+      ],
+      "Mangga": [
+        "1109"
+      ],
+      "Malaya": [
+        "1101"
+      ],
+      "Maharlika": [
+        "1114"
+      ],
+      "Loyola Heights": [
+        "1108"
+      ],
+      "Lourdes": [
+        "1114"
+      ],
+      "Libis": [
+        "1110"
+      ],
+      "Langing Handa": [
+        "1103"
+      ],
+      "La Loma": [
+        "1114"
+      ],
+      "Krus Na Ligas": [
+        "1101"
+      ],
+      "Kristong Hari": [
+        "1112"
+      ],
+      "Kaunlaran": [
+        "1111"
+      ],
+      "Katipunan": [
+        "1105"
+      ],
+      "Kamuning": [
+        "1103"
+      ],
+      "Kamias": [
+        "1102"
+      ],
+      "Kalusugan": [
+        "1112"
+      ],
+      "Immaculate Concepcion": [
+        "1111"
+      ],
+      "Horseshoe": [
+        "1112"
+      ],
+      "Holy Spirit": [
+        "1127"
+      ],
+      "Gulod": [
+        "1117"
+      ],
+      "Gintong Silahis": [
+        "1114"
+      ],
+      "Santol": [
+        "1113"
+      ],
+      "Fairview (South)": [
+        "1122"
+      ],
+      "Fairview (North)": [
+        "1121"
+      ],
+      "Fairview": [
+        "1118"
+      ],
+      "Escopa": [
+        "1109"
+      ],
+      "E. Rodriguez": [
+        "1102"
+      ],
+      "Duyan-duyan": [
+        "1102"
+      ],
+      "Doña Josefa": [
+        "1113"
+      ],
+      "Doña Faustina Subd.": [
+        "1125"
+      ],
+      "Doña Aurora": [
+        "1113"
+      ],
+      "Don Manuel": [
+        "1113"
+      ],
+      "Doña Imelda": [
+        "1113"
+      ],
+      "Dioquino Zobel": [
+        "1109"
+      ],
+      "Diliman": [
+        "1101"
+      ],
+      "Del Monte": [
+        "1105"
+      ],
+      "Damong Maliit": [
+        "1123"
+      ],
+      "Damayan Lagi": [
+        "1112"
+      ],
+      "Damayan": [
+        "1104"
+      ],
+      "Damar": [
+        "1115"
+      ],
+      "Culiat": [
+        "1128"
+      ],
+      "Cubao": [
+        "1109"
+      ],
+      "Crame": [
+        "1111"
+      ],
+      "Commonwealth": [
+        "1121"
+      ],
+      "Claro": [
+        "1102"
+      ],
+      "Quezon City": [
+        "1100"
+      ],
+      "Capri": [
+        "1117"
+      ],
+      "Bungad": [
+        "1105"
+      ],
+      "Camp. Aguinaldo": [
+        "1110"
+      ],
+      "Capitol Hills/Park": [
+        "1126"
+      ],
+      "Botocan": [
+        "1101"
+      ],
+      "Blue Ridge": [
+        "1109"
+      ],
+      "BF Homes": [
+        "1120"
+      ],
+      "Bayanihan": [
+        "1109"
+      ],
+      "Batasan Hills": [
+        "1126"
+      ],
+      "Balumbato": [
+        "1106"
+      ],
+      "Balingasa": [
+        "1115"
+      ],
+      "Bahay Toro": [
+        "1106"
+      ],
+      "Bagong Silangan": [
+        "1119"
+      ],
+      "Bagong Pag-asa": [
+        "1105"
+      ],
+      "Bagong Lipunan": [
+        "1111"
+      ],
+      "Bagong Buhay": [
+        "1109"
+      ],
+      "Bagong Bayan": [
+        "1110"
+      ],
+      "Bagbag": [
+        "1116"
+      ],
+      "Baesa": [
+        "1106",
+        "1401"
+      ],
+      "Apolonio Samson": [
+        "1106"
+      ],
+      "Amihan": [
+        "1102"
+      ],
+      "Alicia": [
+        "1105"
+      ],
+      "Sta. Ana": [
+        "1621",
+        "1009"
+      ],
+      "Aguho": [
+        "1620"
+      ],
+      "Ugong": [
+        "1604"
+      ],
+      "Sta. Lucia": [
+        "1608"
+      ],
+      "Santolan": [
+        "1610",
+        "1478"
+      ],
+      "San Joaquin": [
+        "1601"
+      ],
+      "Rosario": [
+        "1609"
+      ],
+      "Pinagbuhatan": [
+        "1602"
+      ],
+      "Pasig CPO": [
+        "1600"
+      ],
+      "Ortigas PO": [
+        "1605"
+      ],
+      "Maybunga": [
+        "1607"
+      ],
+      "Manggahan": [
+        "1611"
+      ],
+      "Kapitolyo": [
+        "1603"
+      ],
+      "Green Park": [
+        "1612"
+      ],
+      "Caniogan": [
+        "1606"
+      ],
+      "Villamor Airbase": [
+        "1309"
+      ],
+      "Santa Clara": [
+        "1304"
+      ],
+      "San Rafael": [
+        "1302"
+      ],
+      "PICC (Reclamation Area)": [
+        "1307"
+      ],
+      "Pasay City CPO Malibay": [
+        "1300"
+      ],
+      "Manila Bay (Reclamation)": [
+        "1308"
+      ],
+      "Domestic Airport PO": [
+        "1301"
+      ],
+      "United Subd.": [
+        "1713"
+      ],
+      "Tambo": [
+        "1701"
+      ],
+      "South Admiral Village": [
+        "1709"
+      ],
+      "San Antonio Valley I": [
+        "1715"
+      ],
+      "San Antonio Valley 11 & 12": [
+        "1707"
+      ],
+      "Pulo": [
+        "1706"
+      ],
+      "Parañaque CPO": [
+        "1700"
+      ],
+      "Ninoy Aquino Int’l. Airport": [
+        "1705"
+      ],
+      "Multinational Village": [
+        "1708"
+      ],
+      "Moonwalk": [
+        "1709"
+      ],
+      "Miramar Subdivision": [
+        "1712"
+      ],
+      "Merville Park": [
+        "1709"
+      ],
+      "Maywood Village Ii": [
+        "1716"
+      ],
+      "Maywood I": [
+        "1719"
+      ],
+      "Marina Subd. (Reclamation)": [
+        "1703"
+      ],
+      "Manila Memorial Park": [
+        "1717"
+      ],
+      "Ireneville Subdivision I & Ii": [
+        "1719"
+      ],
+      "Ireneville Ii": [
+        "1714"
+      ],
+      "Executive Heights Subd.": [
+        "1710"
+      ],
+      "Bf Homes 2": [
+        "1718"
+      ],
+      "Bf Homes 1": [
+        "1720"
+      ],
+      "Better Living Subdivision": [
+        "1711"
+      ],
+      "Baclaran": [
+        "1702"
+      ],
+      "Aeropark Subdivision": [
+        "1714"
+      ],
+      "Tanza": [
+        "1490"
+      ],
+      "Tangos": [
+        "1489"
+      ],
+      "Navotas": [
+        "1485"
+      ],
+      "Kaunlaran Village": [
+        "1409",
+        "1409",
+        "1409"
+      ],
+      "Kapitbahayan (East)": [
+        "1413",
+        "1413"
+      ],
+      "Isla De Cocomo": [
+        "1412"
+      ],
+      "Fish Market": [
+        "1411",
+        "1411"
+      ],
+      "Tunasan": [
+        "1773"
+      ],
+      "Susana Heights": [
+        "1774"
+      ],
+      "Poblacion": [
+        "1776",
+        "1210"
+      ],
+      "Pleasant Village": [
+        "1777"
+      ],
+      "Pearl Heights": [
+        "1775"
+      ],
+      "Muntinlupa CPO": [
+        "1770"
+      ],
+      "Filinvest Corp. City": [
+        "1781"
+      ],
+      "Bule/Cupang": [
+        "1771"
+      ],
+      "Bayanan/Putatan": [
+        "1772"
+      ],
+      "Ayala Alabang Subdivision": [
+        "1780"
+      ],
+      "Ayala Alabang P.O. Boxes": [
+        "1799"
+      ],
+      "Tañong": [
+        "1803"
+      ],
+      "San Roque - Calumpang": [
+        "1801"
+      ],
+      "Parang": [
+        "1809"
+      ],
+      "Tumana": [
+        "1806"
+      ],
+      "Nangka": [
+        "1808"
+      ],
+      "Marikina Heights": [
+        "1810"
+      ],
+      "Marikina CPO - Sta. Elena - Sto. Niño": [
+        "1800"
+      ],
+      "Malanday": [
+        "1805"
+      ],
+      "Industrial Valley": [
+        "1802"
+      ],
+      "J. De La Peña": [
+        "1804"
+      ],
+      "Fortune": [
+        "1812"
+      ],
+      "Concepcion 2": [
+        "1811"
+      ],
+      "Concepcion 1": [
+        "1807"
+      ],
+      "Barangka": [
+        "1803"
+      ],
+      "Wack Wack Golf": [
+        "1555"
+      ],
+      "Vergara": [
+        "1551"
+      ],
+      "Shaw Boulevard": [
+        "1552"
+      ],
+      "Phil. Natl. Mental Hospital": [
+        "1553"
+      ],
+      "Mandaluyong CPO": [
+        "1550"
+      ],
+      "Greenhills South": [
+        "1556"
+      ],
+      "East Edsa": [
+        "1554"
+      ],
+      "Tonsuya": [
+        "1473"
+      ],
+      "Potrero": [
+        "1475"
+      ],
+      "Muzon": [
+        "1479"
+      ],
+      "Maysilo": [
+        "1477"
+      ],
+      "Malabon": [
+        "1470"
+      ],
+      "Longos": [
+        "1472"
+      ],
+      "Flores": [
+        "1471"
+      ],
+      "Dampalit": [
+        "1480"
+      ],
+      "Araneta Subdivision": [
+        "1476"
+      ],
+      "Acacia": [
+        "1474"
+      ],
+      "Valenzuela (Inc. Santiago, San Miguel & Rizal Vill.)": [
+        "1208"
+      ],
+      "Urdaneta Village": [
+        "1225"
+      ],
+      "Sta. Cruz": [
+        "1205"
+      ],
+      "San Lorenzo Village": [
+        "1223"
+      ],
+      "San Antonio Village (Inc. Malu)": [
+        "1203"
+      ],
+      "Salcedo Village": [
+        "1227"
+      ],
+      "Rembo (West)": [
+        "1215"
+      ],
+      "Rembo (East) & Malapad Na Bato": [
+        "1216"
+      ],
+      "Pio Del Pilar": [
+        "1230"
+      ],
+      "Pinagkaisahan-pitogo": [
+        "1213"
+      ],
+      "Pembo": [
+        "1218"
+      ],
+      "Pasong Tamo 2000 Up, Ecology V": [
+        "1231"
+      ],
+      "Palanan": [
+        "1235"
+      ],
+      "Olympia And Carmona": [
+        "1207"
+      ],
+      "Makati CPO (Inc, Buendia Up To)": [
+        "1200"
+      ],
+      "Commercial Center": [
+        "1224"
+      ],
+      "Magallanes Village": [
+        "1232"
+      ],
+      "Legaspi Village": [
+        "1229"
+      ],
+      "La Paz-Singkamas-Tejeros": [
+        "1204"
+      ],
+      "Kasilawan": [
+        "1206"
+      ],
+      "Guadalupe Viejo (Inc. Palm Vil)": [
+        "1211"
+      ],
+      "Guadalupe Nuevo (Inc. Visayan)": [
+        "1212"
+      ],
+      "Greenbelt": [
+        "1228"
+      ],
+      "Fort Bonifacio Naval Stn.": [
+        "1202"
+      ],
+      "Forbes Park (South)": [
+        "1220"
+      ],
+      "Forbes Park (North)": [
+        "1219"
+      ],
+      "Dasmarinas Village (South)": [
+        "1222"
+      ],
+      "Dasmarinas Village (North)": [
+        "1221"
+      ],
+      "Comembo": [
+        "1217"
+      ],
+      "Cembo": [
+        "1214"
+      ],
+      "Bel-air": [
+        "1209"
+      ],
+      "Bangkal": [
+        "1233"
+      ],
+      "Ayala - Paseo De Roxas": [
+        "1226"
+      ],
+      "Zapote": [
+        "1742"
+      ],
+      "Verdant Acres Subdivision": [
+        "1746"
+      ],
+      "Talon, Moonwalk": [
+        "1747"
+      ],
+      "T. S. Cruz Subdivision": [
+        "1751"
+      ],
+      "Soldiers Hills Subdivision": [
+        "1752"
+      ],
+      "Remarville Subdivision": [
+        "1741"
+      ],
+      "Pulang Lupa": [
+        "1742"
+      ],
+      "Manuyo": [
+        "1744"
+      ],
+      "Manila Doctors Village": [
+        "1748"
+      ],
+      "Las Piñas CPO": [
+        "1740"
+      ],
+      "Gatchalian Subdivision": [
+        "1745"
+      ],
+      "Cut-cut": [
+        "1743"
+      ],
+      "Angela Village": [
+        "1749"
+      ],
+      "Almanza": [
+        "1750"
+      ],
+      "University Hills": [
+        "1407"
+      ],
+      "Sta. Quiteria": [
+        "1402"
+      ],
+      "Maypajo": [
+        "1410"
+      ],
+      "Caloocan City CPO": [
+        "1400"
+      ],
+      "Isla de Cocomo": [
+        "1412"
+      ],
+      "Grace Park (West)": [
+        "1406"
+      ],
+      "Grace Park (East)": [
+        "1403"
+      ],
+      "1st Ave. to 7th Ave. - West": [
+        "1405"
+      ],
+      "Victory Heights": [
+        "1427"
+      ],
+      "Tala Leprosarium": [
+        "1427"
+      ],
+      "Novaliches North (Camarin North)": [
+        "1422"
+      ],
+      "Lilles Ville Subdivision": [
+        "1423"
+      ],
+      "Kaybiga/Deparo": [
+        "1420"
+      ],
+      "Capitol Parkland Subdivision": [
+        "1424"
+      ],
+      "Bankers Village": [
+        "1426"
+      ],
+      "Bagumbong/Pag-asa": [
+        "1421"
+      ],
+      "Bagong Silang": [
+        "1428"
+      ],
+      "Amparo Subdivision": [
+        "1425"
+      ],
+      "Tondo (South)": [
+        "1012"
+      ],
+      "Tondo (North)": [
+        "1013"
+      ],
+      "Sta. Mesa": [
+        "1016"
+      ],
+      "Sta. Cruz (North)": [
+        "1014"
+      ],
+      "San Nicolas": [
+        "1010"
+      ],
+      "San Andres Bukid": [
+        "1017"
+      ],
+      "Sampaloc (West)": [
+        "1015"
+      ],
+      "Port Area (South)": [
+        "1018"
+      ],
+      "Pandacan": [
+        "1011",
+        "1011"
+      ],
+      "Paco": [
+        "1007"
+      ],
+      "Ermita": [
+        "1000"
+      ],
+      "Quiapo": [
+        "1001"
+      ],
+      "Malate": [
+        "1004"
+      ],
+      "Sta. Cruz (South)": [
+        "1003"
+      ],
+      "Sampaloc (East)": [
+        "1008"
+      ],
+      "Intramuros": [
+        "1002"
+      ]
+    }
+  },
+  "CAR (Cordillera Administrative Region)": {
+    "Apayao": {
+      "Santa Marcela": [
+        "3811"
+      ],
+      "Calanasan": [
+        "3814"
+      ],
+      "Conner": [
+        "3807"
+      ],
+      "Flora": [
+        "3810"
+      ],
+      "Kabugao": [
+        "3809"
+      ],
+      "Luna": [
+        "3813"
+      ],
+      "Pudtol": [
+        "3812"
+      ]
+    },
+    "Kalinga": {
+      "Tabuk City": [
+        "3800"
+      ],
+      "Tanudan": [
+        "3805"
+      ],
+      "Tinglayan": [
+        "3804"
+      ],
+      "Balbalan": [
+        "3801"
+      ],
+      "Lubuagan": [
+        "3802"
+      ],
+      "Pasil": [
+        "3803"
+      ],
+      "Pinukpok": [
+        "3806"
+      ],
+      "Rizal": [
+        "3808"
+      ]
+    },
+    "Ifugao": {
+      "Aguinaldo": [
+        "3606"
+      ],
+      "Asipulo": [
+        "3610"
+      ],
+      "Hingyon": [
+        "3607"
+      ],
+      "Banaue": [
+        "3601"
+      ],
+      "Hungduan": [
+        "3603"
+      ],
+      "Kiangan": [
+        "3604"
+      ],
+      "Lagawe": [
+        "3600"
+      ],
+      "Lamut": [
+        "3605"
+      ],
+      "Mayoyao": [
+        "3602"
+      ],
+      "Tinoc": [
+        "3609"
+      ],
+      "Alfonso Lista (formerly Potia)": [
+        "3608"
+      ]
+    },
+    "Benguet": {
+      "Tublay": [
+        "2615"
+      ],
+      "Sablan": [
+        "2614"
+      ],
+      "Tuba": [
+        "2603"
+      ],
+      "Philippine Military Academy (PMA)": [
+        "2602"
+      ],
+      "Atok": [
+        "2612"
+      ],
+      "Baguio City": [
+        "2600"
+      ],
+      "Bakun": [
+        "2610"
+      ],
+      "Bokod": [
+        "2605"
+      ],
+      "Buguias": [
+        "2607"
+      ],
+      "Itogon": [
+        "2604"
+      ],
+      "Kabayan": [
+        "2606"
+      ],
+      "Kapangan": [
+        "2613"
+      ],
+      "Kibungan": [
+        "2611"
+      ],
+      "La Trinidad": [
+        "2601"
+      ],
+      "Mankayan": [
+        "2608"
+      ]
+    },
+    "Abra": {
+      "Peñarrubia": [
+        "2804"
+      ],
+      "Pidigan": [
+        "2806"
+      ],
+      "Pilar": [
+        "2812"
+      ],
+      "Sallapadan": [
+        "2818"
+      ],
+      "San Isidro": [
+        "2809"
+      ],
+      "San Juan": [
+        "2823"
+      ],
+      "San Quintin": [
+        "2808"
+      ],
+      "Tayum": [
+        "2803"
+      ],
+      "Tineg": [
+        "2822"
+      ],
+      "Tubo": [
+        "2814"
+      ],
+      "Villaviciosa": [
+        "2811"
+      ],
+      "La Paz": [
+        "2826"
+      ],
+      "Lacub": [
+        "2821"
+      ],
+      "Lagangilang": [
+        "2802"
+      ],
+      "Lagayan": [
+        "2824"
+      ],
+      "Langiden": [
+        "2807"
+      ],
+      "Licuan-Baay": [
+        "2819"
+      ],
+      "Luba": [
+        "2813"
+      ],
+      "Malibcong": [
+        "2820"
+      ],
+      "Manabo": [
+        "2810"
+      ],
+      "Bangued": [
+        "2800"
+      ],
+      "Boliney": [
+        "2815"
+      ],
+      "Bucay": [
+        "2805"
+      ],
+      "Bucloc": [
+        "2817"
+      ],
+      "Daguioman": [
+        "2816"
+      ],
+      "Danglas": [
+        "2825"
+      ],
+      "Dolores": [
+        "2801"
+      ]
+    }
+  },
+  "Region 5 (Bicol Region)": {
+    "Sorsogon": {
+      "Irosin": [
+        "4707"
+      ],
+      "Juban": [
+        "4703"
+      ],
+      "Magallanes": [
+        "4705"
+      ],
+      "Matnog": [
+        "4708"
+      ],
+      "Pilar": [
+        "4714"
+      ],
+      "Prieto Diaz": [
+        "4711"
+      ],
+      "Sorsogon": [
+        "4700"
+      ],
+      "Sta. Magdalena": [
+        "4709"
+      ],
+      "Bacon": [
+        "4701"
+      ],
+      "Barcelona": [
+        "4712"
+      ],
+      "Bulan": [
+        "4706"
+      ],
+      "Bulusan": [
+        "4704"
+      ],
+      "Casiguran": [
+        "4702"
+      ],
+      "Castilla": [
+        "4713"
+      ],
+      "Donsol": [
+        "4715"
+      ],
+      "Gubat": [
+        "4710"
+      ]
+    },
+    "Masbate": {
+      "Mandaon": [
+        "5411"
+      ],
+      "Masbate": [
+        "5400"
+      ],
+      "Milagros": [
+        "5410"
+      ],
+      "Mobo": [
+        "5401"
+      ],
+      "Monreal": [
+        "5418"
+      ],
+      "Palanas": [
+        "5404"
+      ],
+      "Pio V. Corpuz": [
+        "5406"
+      ],
+      "Placer": [
+        "5408"
+      ],
+      "San Fernando": [
+        "5416"
+      ],
+      "San Jacinto": [
+        "5417"
+      ],
+      "San Pascual": [
+        "5420"
+      ],
+      "Uson": [
+        "5402"
+      ],
+      "Claveria": [
+        "5419"
+      ],
+      "Aroroy": [
+        "5414"
+      ],
+      "Baleno": [
+        "5413"
+      ],
+      "Balud": [
+        "5412"
+      ],
+      "Batuan": [
+        "5415"
+      ],
+      "Cataingan": [
+        "5405"
+      ],
+      "Cawayan": [
+        "5409"
+      ],
+      "Dimasalang": [
+        "5403"
+      ],
+      "Esperanza": [
+        "5407"
+      ]
+    },
+    "Catanduanes": {
+      "Bagamanoc": [
+        "4807"
+      ],
+      "Baras": [
+        "4803"
+      ],
+      "Bato": [
+        "4801"
+      ],
+      "Caramoran": [
+        "4808"
+      ],
+      "Gigmoto": [
+        "4804"
+      ],
+      "Pandan": [
+        "4809"
+      ],
+      "Panganiban": [
+        "4806"
+      ],
+      "San Andres": [
+        "4810"
+      ],
+      "San Miguel": [
+        "4802"
+      ],
+      "Viga": [
+        "4805"
+      ],
+      "Virac": [
+        "4800"
+      ]
+    },
+    "Camarines Sur (Camsur)": {
+      "Siruma": [
+        "4427"
+      ],
+      "Tigaon": [
+        "4420"
+      ],
+      "Tinambac": [
+        "4426"
+      ],
+      "Sagnay": [
+        "4421"
+      ],
+      "San Fernando": [
+        "4415"
+      ],
+      "San Jose": [
+        "4423"
+      ],
+      "Sipocot": [
+        "4408"
+      ],
+      "Minalabac": [
+        "4414"
+      ],
+      "Nabua": [
+        "4434"
+      ],
+      "Naga City": [
+        "4400"
+      ],
+      "Ocampo": [
+        "4419"
+      ],
+      "Pamplona": [
+        "4416"
+      ],
+      "Pasacao": [
+        "4417"
+      ],
+      "Pili": [
+        "4418"
+      ],
+      "Presentacion": [
+        "4424"
+      ],
+      "Ragay": [
+        "4410"
+      ],
+      "Caramoan": [
+        "4429"
+      ],
+      "Del Gallego": [
+        "4411"
+      ],
+      "Gainza": [
+        "4412"
+      ],
+      "Garchitorena": [
+        "4428"
+      ],
+      "Goa": [
+        "4422"
+      ],
+      "Iriga City": [
+        "4431"
+      ],
+      "Lagonoy": [
+        "4425"
+      ],
+      "Libmanan": [
+        "4407"
+      ],
+      "Lupi": [
+        "4409"
+      ],
+      "Magarao": [
+        "4403"
+      ],
+      "Milaor": [
+        "4413"
+      ],
+      "Baao": [
+        "4432"
+      ],
+      "Balatan": [
+        "4436"
+      ],
+      "Bato": [
+        "4435"
+      ],
+      "Bombon": [
+        "4404"
+      ],
+      "Buhi": [
+        "4433"
+      ],
+      "Bula": [
+        "4430"
+      ],
+      "Cabusao": [
+        "4406"
+      ],
+      "Calabanga": [
+        "4405"
+      ],
+      "Camaligan": [
+        "4401"
+      ],
+      "Canaman": [
+        "4402"
+      ]
+    },
+    "Camarines Norte": {
+      "Basud": [
+        "4608"
+      ],
+      "Capalonga": [
+        "4607"
+      ],
+      "Daet": [
+        "4600"
+      ],
+      "Jose Panganiban": [
+        "4606"
+      ],
+      "Labo": [
+        "4604"
+      ],
+      "Mercedes": [
+        "4601"
+      ],
+      "Paracale": [
+        "4605"
+      ],
+      "San Lorenzo Ruiz (formerly Imelda)": [
+        "4610"
+      ],
+      "San Vicente": [
+        "4609"
+      ],
+      "Sta. Elena": [
+        "4611"
+      ],
+      "Talisay": [
+        "4602"
+      ],
+      "Vinzons": [
+        "4603"
+      ],
+      "Tulay na Lupa": [
+        "4612"
+      ]
+    },
+    "Albay": {
+      "Oas": [
+        "4505"
+      ],
+      "Pio Duran (Malacbalac)": [
+        "4516"
+      ],
+      "Polangui": [
+        "4506"
+      ],
+      "Rapu-Rapu": [
+        "4517"
+      ],
+      "Sto. Domingo": [
+        "4508"
+      ],
+      "Tabaco": [
+        "4511"
+      ],
+      "Tiwi": [
+        "4513"
+      ],
+      "Bacacay": [
+        "4509"
+      ],
+      "Camalig": [
+        "4502"
+      ],
+      "Daraga (Locsin)": [
+        "4501"
+      ],
+      "Guinobatan": [
+        "4503"
+      ],
+      "Jovellar": [
+        "4515"
+      ],
+      "Legazpi City": [
+        "4500"
+      ],
+      "Libon": [
+        "4507"
+      ],
+      "Ligao": [
+        "4504"
+      ],
+      "Malilipot": [
+        "4510"
+      ],
+      "Malinao": [
+        "4512"
+      ],
+      "Manito": [
+        "4514"
+      ]
+    }
+  },
+  "Region 4B (MIMAROPA)": {
+    "Romblon": {
+      "Sta. Maria (formerly Imelda)": [
+        "5502"
+      ],
+      "Alcantara": [
+        "5509"
+      ],
+      "Banton (Jones)": [
+        "5515"
+      ],
+      "Cajidiocan": [
+        "Cajidiocan"
+      ],
+      "Calatrava": [
+        "5503"
+      ],
+      "Concepcion": [
+        "5516"
+      ],
+      "Corcuera": [
+        "5514"
+      ],
+      "Ferrol": [
+        "5506"
+      ],
+      "Looc": [
+        "5507"
+      ],
+      "Magdiwang": [
+        "5511"
+      ],
+      "Odiongan": [
+        "5505"
+      ],
+      "Romblon": [
+        "5500"
+      ],
+      "San Agustin": [
+        "5501"
+      ],
+      "San Andres": [
+        "5504"
+      ],
+      "San fernando": [
+        "5513"
+      ],
+      "San Jose": [
+        "5510"
+      ],
+      "Sta. Fe": [
+        "5508"
+      ]
+    },
+    "Palawan": {
+      "Kalayaan": [
+        "5322"
+      ],
+      "Linapacan": [
+        "5314"
+      ],
+      "Magsaysay": [
+        "5319"
+      ],
+      "Narra (Panacan)": [
+        "5303"
+      ],
+      "Puerto Princesa City": [
+        "5300"
+      ],
+      "Quezon": [
+        "5304"
+      ],
+      "Rizal (Marcos)": [
+        "5323"
+      ],
+      "Roxas": [
+        "5308"
+      ],
+      "San Vicente": [
+        "5309"
+      ],
+      "Sofronio Española": [
+        "5324"
+      ],
+      "Taytay": [
+        "5312"
+      ],
+      "Iwahig Penal Colony": [
+        "5301"
+      ],
+      "Aborlan": [
+        "5302"
+      ],
+      "Agutaya": [
+        "5320"
+      ],
+      "Araceli": [
+        "5311"
+      ],
+      "Balabac": [
+        "5307"
+      ],
+      "Batazara": [
+        "5306"
+      ],
+      "Brooke's Point": [
+        "5305"
+      ],
+      "Busuanga": [
+        "5317"
+      ],
+      "Cagayancillo": [
+        "5321"
+      ],
+      "Coron": [
+        "5316"
+      ],
+      "Culion": [
+        "5315"
+      ],
+      "Cuyo": [
+        "5318"
+      ],
+      "Dumaran": [
+        "5310"
+      ],
+      "El Nido (Baquit)": [
+        "5313"
+      ]
+    },
+    "Oriental Mindoro": {
+      "Calapan": [
+        "5200"
+      ],
+      "Baco": [
+        "5201"
+      ],
+      "Bansud": [
+        "5210"
+      ],
+      "Bongabong": [
+        "5211"
+      ],
+      "Bulalacao": [
+        "5214"
+      ],
+      "Gloria": [
+        "5209"
+      ],
+      "Mansalay": [
+        "5213"
+      ],
+      "Naujan": [
+        "5204"
+      ],
+      "Pinamalayan": [
+        "5208"
+      ],
+      "Pola": [
+        "5206"
+      ],
+      "Puerto Galera": [
+        "5203"
+      ],
+      "Roxas": [
+        "5212"
+      ],
+      "San Teodoro": [
+        "5202"
+      ],
+      "Socorro": [
+        "5207"
+      ],
+      "Victoria": [
+        "5205"
+      ]
+    },
+    "Occidental Mindoro": {
+      "Tilik": [
+        "5110"
+      ],
+      "Abra de Ilog": [
+        "5108"
+      ],
+      "Calintaan": [
+        "5102"
+      ],
+      "Looc": [
+        "5111"
+      ],
+      "Lubang": [
+        "5109"
+      ],
+      "Magsaysay": [
+        "5101"
+      ],
+      "Mamburao": [
+        "5106"
+      ],
+      "Palauan": [
+        "5107"
+      ],
+      "Rizal": [
+        "5103"
+      ],
+      "Sablayan": [
+        "5104"
+      ],
+      "San Jose": [
+        "5100"
+      ],
+      "Sta. Cruz": [
+        "5105"
+      ]
+    },
+    "Marinduque": {
+      "Boac": [
+        "4900"
+      ],
+      "Buenavista": [
+        "4904"
+      ],
+      "Gasan": [
+        "4905"
+      ],
+      "Mogpog": [
+        "4901"
+      ],
+      "Sta. Cruz": [
+        "4902"
+      ],
+      "Torrijos": [
+        "4903"
+      ]
+    }
+  },
+  "Region 4A (CALABARZON)": {
+    "Rizal": {
+      "Bagong Nayon (Cogeo)": [
+        "1872"
+      ],
+      "Langhaya": [
+        "1874"
+      ],
+      "Mambagat": [
+        "1875"
+      ],
+      "Mayamot": [
+        "1871"
+      ],
+      "Angono": [
+        "1930"
+      ],
+      "Antipolo": [
+        "1870"
+      ],
+      "Baras": [
+        "1970"
+      ],
+      "Binangonan": [
+        "1940"
+      ],
+      "Cainta": [
+        "1900"
+      ],
+      "Cardona": [
+        "1950"
+      ],
+      "Jalajala": [
+        "1990"
+      ],
+      "Morong": [
+        "1960"
+      ],
+      "Pililla": [
+        "1910"
+      ],
+      "Rodriguez (Montalban)": [
+        "1860"
+      ],
+      "San Mateo": [
+        "1850"
+      ],
+      "Tanay": [
+        "1980"
+      ],
+      "Teresa": [
+        "1880"
+      ],
+      "Taytay": [
+        "1920"
+      ]
+    },
+    "Quezon": {
+      "Quezon Capitol": [
+        "4300"
+      ],
+      "San Narciso": [
+        "4313"
+      ],
+      "Pitogo": [
+        "4308"
+      ],
+      "Plaridel": [
+        "4306"
+      ],
+      "Polilio": [
+        "4339"
+      ],
+      "Quezon": [
+        "4332"
+      ],
+      "Real": [
+        "4335"
+      ],
+      "Sampaloc": [
+        "4329"
+      ],
+      "San Andres": [
+        "4314"
+      ],
+      "San Antonio": [
+        "4324"
+      ],
+      "San Francisco": [
+        "4315"
+      ],
+      "Sariaya": [
+        "4322"
+      ],
+      "Tagkawayan": [
+        "4321"
+      ],
+      "Tayabas": [
+        "4327"
+      ],
+      "Tiaong": [
+        "4325"
+      ],
+      "Unisan": [
+        "4305"
+      ],
+      "Hondagua": [
+        "4317"
+      ],
+      "Panukulan": [
+        "4337"
+      ],
+      "Gumaca": [
+        "4307"
+      ],
+      "Infanta": [
+        "4336"
+      ],
+      "Jomalig": [
+        "4342"
+      ],
+      "Lopez": [
+        "4316"
+      ],
+      "Lucban": [
+        "4328"
+      ],
+      "Lucena City": [
+        "4301"
+      ],
+      "Macalelon": [
+        "4309"
+      ],
+      "Mauban": [
+        "4330"
+      ],
+      "Mulanay": [
+        "4312"
+      ],
+      "Padre Burgos": [
+        "4303"
+      ],
+      "Pagbilao": [
+        "4302"
+      ],
+      "Patnanungan": [
+        "4341"
+      ],
+      "Perez": [
+        "4334"
+      ],
+      "Agdangan": [
+        "4304"
+      ],
+      "Alabat": [
+        "4333"
+      ],
+      "Atimonan": [
+        "4331"
+      ],
+      "Buenavista": [
+        "4320"
+      ],
+      "Burdeos": [
+        "4340"
+      ],
+      "Calauag": [
+        "4318"
+      ],
+      "Candelaria": [
+        "4323"
+      ],
+      "Catanauan": [
+        "4311"
+      ],
+      "Dolores": [
+        "4326"
+      ],
+      "General Nakar": [
+        "4338"
+      ],
+      "General Luna": [
+        "4310"
+      ],
+      "Guinayangan": [
+        "4319"
+      ]
+    },
+    "Laguna": {
+      "Paete": [
+        "4016"
+      ],
+      "Pagsanjan": [
+        "4008"
+      ],
+      "Pakil": [
+        "4017"
+      ],
+      "Pangil": [
+        "4018"
+      ],
+      "Pila": [
+        "4010"
+      ],
+      "Rizal": [
+        "4003"
+      ],
+      "San Pablo City": [
+        "4000"
+      ],
+      "San Pedro": [
+        "4023"
+      ],
+      "Sta. Cruz": [
+        "4009"
+      ],
+      "Sta. Maria": [
+        "4022"
+      ],
+      "Victoria": [
+        "4011"
+      ],
+      "Sta. Rosa": [
+        "4026"
+      ],
+      "Siniloan": [
+        "4019"
+      ],
+      "College Los Baños": [
+        "4031"
+      ],
+      "Laguna Technopark": [
+        "4034"
+      ],
+      "Alaminos": [
+        "4001"
+      ],
+      "Bay": [
+        "4033"
+      ],
+      "Biñan": [
+        "4024"
+      ],
+      "Cabuyao": [
+        "4025"
+      ],
+      "Calamba": [
+        "4027"
+      ],
+      "Caluan": [
+        "4012"
+      ],
+      "Cavinti": [
+        "4013"
+      ],
+      "Famy": [
+        "4021"
+      ],
+      "Kalayaan": [
+        "4015"
+      ],
+      "Liliw": [
+        "4004"
+      ],
+      "Los Baños": [
+        "4030"
+      ],
+      "Lumban": [
+        "4014"
+      ],
+      "Luisiana": [
+        "4032"
+      ],
+      "Mabitac": [
+        "4020"
+      ],
+      "Magdalena": [
+        "4007"
+      ],
+      "Majayjay": [
+        "4005"
+      ],
+      "Nagcarlan": [
+        "4002"
+      ],
+      "Botocan": [
+        "4006"
+      ]
+    },
+    "Cavite": {
+      "Silang": [
+        "4118"
+      ],
+      "Tagaytay": [
+        "4120"
+      ],
+      "Tanza": [
+        "4108"
+      ],
+      "Ternate": [
+        "4111"
+      ],
+      "Trece Martirez City": [
+        "4109"
+      ],
+      "Magallanes": [
+        "4113"
+      ],
+      "Maragondon": [
+        "4112"
+      ],
+      "Mendez": [
+        "4121"
+      ],
+      "Noveleta": [
+        "4105"
+      ],
+      "Naic": [
+        "4110"
+      ],
+      "Rosario": [
+        "4106"
+      ],
+      "Molino": [
+        "4135"
+      ],
+      "Gen. Trias": [
+        "4107"
+      ],
+      "Gen. Mariano Alvarez": [
+        "4117"
+      ],
+      "Imus": [
+        "4103"
+      ],
+      "Indang": [
+        "4122"
+      ],
+      "Kawit": [
+        "4104"
+      ],
+      "Dasmariñas Resettlement Area": [
+        "4115"
+      ],
+      "Gen. Aguinaldo (Bailen)": [
+        "4124"
+      ],
+      "Alfonso": [
+        "4123"
+      ],
+      "Amadeo": [
+        "4119"
+      ],
+      "Bacoor": [
+        "4102"
+      ],
+      "Carmona": [
+        "4116"
+      ],
+      "Cavite City": [
+        "4100"
+      ],
+      "Dasmariñas": [
+        "4114"
+      ]
+    },
+    "Batangas": {
+      "San Nicolas": [
+        "4207"
+      ],
+      "San Pascual": [
+        "4204"
+      ],
+      "Sta. Teresita": [
+        "4206"
+      ],
+      "Sto. Tomas": [
+        "4234"
+      ],
+      "Taal": [
+        "4208"
+      ],
+      "Talisay": [
+        "4220"
+      ],
+      "Tanauan": [
+        "4232"
+      ],
+      "Taysan": [
+        "4228"
+      ],
+      "Tingloy": [
+        "4203"
+      ],
+      "Tuy": [
+        "4214"
+      ],
+      "Lipa City": [
+        "4217"
+      ],
+      "Lobo": [
+        "4229"
+      ],
+      "Mabini": [
+        "4202"
+      ],
+      "Malvar": [
+        "4233"
+      ],
+      "Mataas na Kahoy": [
+        "4223"
+      ],
+      "Nasugbu": [
+        "4231"
+      ],
+      "Padre Garcia": [
+        "4224"
+      ],
+      "Rosario": [
+        "4225"
+      ],
+      "San Jose": [
+        "4227"
+      ],
+      "San Juan": [
+        "4226"
+      ],
+      "San Luis": [
+        "4210"
+      ],
+      "Fernando Airbase": [
+        "4218"
+      ],
+      "Agoncillo": [
+        "4211"
+      ],
+      "Alitagtag": [
+        "4205"
+      ],
+      "Balayan": [
+        "4213"
+      ],
+      "Balete": [
+        "4219"
+      ],
+      "Batangas City": [
+        "4200"
+      ],
+      "Bauan": [
+        "4201"
+      ],
+      "Calaca": [
+        "4212"
+      ],
+      "Calatagan": [
+        "4215"
+      ],
+      "Cuenca": [
+        "4222"
+      ],
+      "Ibaan": [
+        "4230"
+      ],
+      "Laurel": [
+        "4221"
+      ],
+      "Lemery": [
+        "4209"
+      ],
+      "Lian": [
+        "4216"
+      ]
+    }
+  },
+  "Region 8 (Eastern Visayas)": {
+    "Samar": {
+      "Zumarraga": [
+        "6725"
+      ],
+      "Wright": [
+        "6703"
+      ],
+      "Villareal": [
+        "6717"
+      ],
+      "Tarangnan": [
+        "6704"
+      ],
+      "Talalora": [
+        "6719"
+      ],
+      "Tagapul-an": [
+        "6712"
+      ],
+      "Sto. Niño": [
+        "6711"
+      ],
+      "Sta. Rita": [
+        "6718"
+      ],
+      "Sta. Margarita": [
+        "6709"
+      ],
+      "San Sebastian": [
+        "6714"
+      ],
+      "San Jose de Buan": [
+        "6723"
+      ],
+      "San Jorge": [
+        "6707"
+      ],
+      "Pinabacdao": [
+        "6716"
+      ],
+      "Pagsanghan": [
+        "6705"
+      ],
+      "Motiong": [
+        "6702"
+      ],
+      "Matuguinao": [
+        "6708"
+      ],
+      "Marabut": [
+        "6721"
+      ],
+      "Jiabong": [
+        "6701"
+      ],
+      "Hinabangan": [
+        "6713"
+      ],
+      "Gandara": [
+        "6706"
+      ],
+      "Daram": [
+        "6722"
+      ],
+      "Catbalogan": [
+        "6700"
+      ],
+      "Calbiga": [
+        "6715"
+      ],
+      "Calbayog City": [
+        "6710"
+      ],
+      "Basey": [
+        "6720"
+      ],
+      "Almagro": [
+        "6724"
+      ]
+    }
+  },
+  "Region 13 (Caraga Region)": {
+    "Surigao Del Sur": {
+      "Tandag": [
+        "8300"
+      ],
+      "Tago": [
+        "8302"
+      ],
+      "Tagbina": [
+        "8308"
+      ],
+      "San Miguel": [
+        "8301"
+      ],
+      "San Agustin": [
+        "8305"
+      ],
+      "Marihatag": [
+        "8306"
+      ],
+      "Malixi": [
+        "8319"
+      ],
+      "Madrid": [
+        "8316"
+      ],
+      "Lingig": [
+        "8312"
+      ],
+      "Lianga": [
+        "8307"
+      ],
+      "Lanuza": [
+        "8314"
+      ],
+      "Hinatuan": [
+        "8310"
+      ],
+      "Cortez": [
+        "8313"
+      ],
+      "Carrascal": [
+        "8318"
+      ],
+      "Cantilan": [
+        "8317"
+      ],
+      "Cagwait": [
+        "8304"
+      ],
+      "Bislig": [
+        "8311"
+      ],
+      "Bayabas": [
+        "8303"
+      ],
+      "Barobo": [
+        "8309"
+      ]
+    },
+    "Surigao del Norte": {
+      "Carmen": [
+        "8315"
+      ],
+      "Tagana-an": [
+        "8403"
+      ],
+      "Tubod": [
+        "8406"
+      ],
+      "Surigao City": [
+        "8400"
+      ],
+      "Sta. Monica": [
+        "8422"
+      ],
+      "Socorro": [
+        "8416"
+      ],
+      "Sison": [
+        "8404"
+      ],
+      "San Isidro": [
+        "8421"
+      ],
+      "San Francisco": [
+        "8401"
+      ],
+      "San Benito": [
+        "8423"
+      ],
+      "Placer": [
+        "8405"
+      ],
+      "Pilar": [
+        "8420"
+      ],
+      "Malimono": [
+        "8402"
+      ],
+      "Mainit": [
+        "8407"
+      ],
+      "Gigaquit": [
+        "8409"
+      ],
+      "Gen. Luna": [
+        "8419"
+      ],
+      "Del Carmen": [
+        "8418"
+      ],
+      "Dapa": [
+        "8417"
+      ],
+      "Claver": [
+        "8410"
+      ],
+      "Burgos": [
+        "8424"
+      ],
+      "Bacuag": [
+        "8408"
+      ],
+      "Alegria": [
+        "8425"
+      ]
+    },
+    "Dinagat Islands": {
+      "Tubajon": [
+        "8426"
+      ],
+      "San Jose": [
+        "8427"
+      ],
+      "Loreto": [
+        "8415"
+      ],
+      "Libjo (formerly Albor": [
+        "8414"
+      ],
+      "Dinagat": [
+        "8412"
+      ],
+      "Cagdianao": [
+        "8411"
+      ],
+      "Basilisa (formerly Rizal)": [
+        "8413"
+      ]
+    },
+    "Agusan del Sur": {
+      "Veruela": [
+        "8509"
+      ],
+      "Trento": [
+        "8505"
+      ],
+      "Talacogon": [
+        "8510"
+      ],
+      "Sta. Josefa": [
+        "8512"
+      ],
+      "Sibagat": [
+        "8503"
+      ],
+      "San Luis": [
+        "8511"
+      ],
+      "San Francisco": [
+        "8501"
+      ],
+      "Rosario": [
+        "8504"
+      ],
+      "Prosperidad": [
+        "8500"
+      ],
+      "Loreto": [
+        "8507"
+      ],
+      "La Paz": [
+        "8508"
+      ],
+      "Esperanza": [
+        "8513"
+      ],
+      "Bunawan": [
+        "8506"
+      ],
+      "Bayugan": [
+        "8502"
+      ]
+    },
+    "Agusan del Norte": {
+      "Tubay": [
+        "8606"
+      ],
+      "Santiago": [
+        "8608"
+      ],
+      "Remedios T. Romualdez": [
+        "8611"
+      ],
+      "Nasipit": [
+        "8602"
+      ],
+      "Magallanes": [
+        "8604"
+      ],
+      "Las Nieves": [
+        "8610"
+      ],
+      "Kitcharao": [
+        "8609"
+      ],
+      "Jabonga": [
+        "8607"
+      ],
+      "Carmen": [
+        "8603"
+      ],
+      "Cabadbaran": [
+        "8605"
+      ],
+      "Butuan City": [
+        "8600"
+      ],
+      "Buenavista": [
+        "8601"
+      ]
+    }
+  },
+  "Region 3 (Central Luzon)": {
+    "Zambales": {
+      "Botolan": [
+        "2202"
+      ],
+      "Cabangan": [
+        "2203"
+      ],
+      "Candelaria": [
+        "2212"
+      ],
+      "Castillejos": [
+        "2208"
+      ],
+      "Iba": [
+        "2201"
+      ],
+      "Olongapo City": [
+        "2200"
+      ],
+      "Palauig": [
+        "2210"
+      ],
+      "San Antonio": [
+        "2206"
+      ],
+      "San Felipe": [
+        "2204"
+      ],
+      "San Marcelino": [
+        "2207"
+      ],
+      "San Narciso": [
+        "2205"
+      ],
+      "Subic": [
+        "2209"
+      ],
+      "Sta. Cruz": [
+        "2213"
+      ]
+    },
+    "Tarlac": {
+      "Victoria": [
+        "2313"
+      ],
+      "Tarlac": [
+        "2300"
+      ],
+      "Sta. Ignacia": [
+        "2303"
+      ],
+      "San Manuel": [
+        "2309"
+      ],
+      "San Jose": [
+        "2318"
+      ],
+      "San Clemente": [
+        "2305"
+      ],
+      "Ramos": [
+        "2311"
+      ],
+      "Pura": [
+        "2312"
+      ],
+      "Paniqui": [
+        "2307"
+      ],
+      "Bamban": [
+        "2317"
+      ],
+      "Moncada": [
+        "2308"
+      ],
+      "Mayantoc": [
+        "2304"
+      ],
+      "La Paz": [
+        "2314"
+      ],
+      "Gerona": [
+        "2302"
+      ],
+      "Concepcion": [
+        "2316"
+      ],
+      "Capas": [
+        "2315"
+      ],
+      "Camiling": [
+        "2306"
+      ],
+      "Anao": [
+        "2310"
+      ]
+    },
+    "Pampanga": {
+      "Santa Cruz, Lubao": [
+        "2025"
+      ],
+      "Sasmuan": [
+        "2004"
+      ],
+      "Santo Tomas": [
+        "2020"
+      ],
+      "Santa Rita": [
+        "2002"
+      ],
+      "Santa Ana": [
+        "2022"
+      ],
+      "San Simon": [
+        "2015"
+      ],
+      "San Luis": [
+        "2014"
+      ],
+      "San Fernando": [
+        "2000"
+      ],
+      "Porac": [
+        "2008"
+      ],
+      "Dau, Mabalacat": [
+        "2026"
+      ],
+      "CSEZ, Clark": [
+        "2023"
+      ],
+      "Basa airbase": [
+        "2007"
+      ],
+      "Minalin": [
+        "2019"
+      ],
+      "Masantol": [
+        "2017"
+      ],
+      "Mexico": [
+        "2021"
+      ],
+      "Magalang": [
+        "2011"
+      ],
+      "Macabebe": [
+        "2018"
+      ],
+      "Mabalacat": [
+        "2010"
+      ],
+      "Lubao": [
+        "2005"
+      ],
+      "Guagua": [
+        "2003"
+      ],
+      "Floridablanca": [
+        "2006"
+      ],
+      "Candaba": [
+        "2013"
+      ],
+      "Bacolor": [
+        "2001"
+      ],
+      "Arayat": [
+        "2012"
+      ],
+      "Apalit": [
+        "2016"
+      ],
+      "Angeles City": [
+        "2009"
+      ]
+    },
+    "Nueva Ecija": {
+      "Fort Magsaysay": [
+        "3130"
+      ],
+      "Sta. Rosa": [
+        "3101"
+      ],
+      "Sto. Domingo": [
+        "3133"
+      ],
+      "Talavera": [
+        "3114"
+      ],
+      "Talugtog": [
+        "3118"
+      ],
+      "Zaragoza": [
+        "3110"
+      ],
+      "San Leonardo": [
+        "3102"
+      ],
+      "San Jose City": [
+        "3121"
+      ],
+      "San Isidro": [
+        "3106"
+      ],
+      "Rizal": [
+        "3127"
+      ],
+      "San Antonio": [
+        "3108"
+      ],
+      "Quezon": [
+        "3113"
+      ],
+      "Peñaranda": [
+        "3103"
+      ],
+      "Pantabangan": [
+        "3124"
+      ],
+      "Palayan City": [
+        "3132"
+      ],
+      "Nampicuan": [
+        "3116"
+      ],
+      "Muñoz": [
+        "3119"
+      ],
+      "Lupao": [
+        "3122"
+      ],
+      "Llanera": [
+        "3126"
+      ],
+      "Licab": [
+        "3112"
+      ],
+      "Central Luzon State University": [
+        "3120"
+      ],
+      "Jaen": [
+        "3109"
+      ],
+      "Laur": [
+        "3129"
+      ],
+      "Guimba": [
+        "3115"
+      ],
+      "Gen. Tinio": [
+        "3104"
+      ],
+      "Gen. M. Natividad": [
+        "3125"
+      ],
+      "Gapan City": [
+        "3105"
+      ],
+      "Gabaldon": [
+        "3131"
+      ],
+      "Cuyapo": [
+        "3117"
+      ],
+      "Carrangalan": [
+        "3123"
+      ],
+      "Cabiao": [
+        "3107"
+      ],
+      "Cabanatuan City": [
+        "3100"
+      ],
+      "Bongabon": [
+        "3128"
+      ],
+      "Aliaga": [
+        "3111"
+      ]
+    },
+    "Bulacan": {
+      "Sapang Palay": [
+        "3024"
+      ],
+      "Sta. Maria": [
+        "3022"
+      ],
+      "San Rafael": [
+        "3008"
+      ],
+      "San Miguel": [
+        "3011"
+      ],
+      "Doña Remedios Trinidad": [
+        "3009"
+      ],
+      "Guiguinto": [
+        "3015"
+      ],
+      "Hagonoy": [
+        "3002"
+      ],
+      "Malolos": [
+        "3000"
+      ],
+      "Marilao": [
+        "3019"
+      ],
+      "Meycauayan": [
+        "3020"
+      ],
+      "Norzagaray": [
+        "3013"
+      ],
+      "Obando": [
+        "3021"
+      ],
+      "Pandi": [
+        "3014"
+      ],
+      "Paombong": [
+        "3001"
+      ],
+      "Plaridel": [
+        "3004"
+      ],
+      "Pulilan": [
+        "3005"
+      ],
+      "San Ildefonso": [
+        "3010"
+      ],
+      "San Jose Del Monte": [
+        "3023"
+      ],
+      "Cruz Na Daan": [
+        "3025"
+      ],
+      "Bulacan": [
+        "3017"
+      ],
+      "Bustos": [
+        "3007"
+      ],
+      "Calumpit": [
+        "3003"
+      ],
+      "Bocaue": [
+        "3018"
+      ],
+      "Baliuag": [
+        "3006"
+      ],
+      "Balagtas": [
+        "3016"
+      ],
+      "Angat": [
+        "3012"
+      ]
+    },
+    "Bataan": {
+      "Lamao": [
+        "2104"
+      ],
+      "FAB (Freefort Area of Bataan)": [
+        "2106"
+      ],
+      "Cabcaben": [
+        "2109"
+      ],
+      "Limay": [
+        "2103"
+      ],
+      "Hermosa": [
+        "2111"
+      ],
+      "Dinalupihan": [
+        "2110"
+      ],
+      "Balanga": [
+        "2100"
+      ],
+      "Bagac": [
+        "2107"
+      ],
+      "Abucay": [
+        "2114"
+      ]
+    },
+    "Aurora": {
+      "Casiguran": [
+        "3204"
+      ],
+      "Dilasag": [
+        "3205"
+      ],
+      "Dinalungan": [
+        "3206"
+      ],
+      "Dingalan": [
+        "3207"
+      ],
+      "Dipaculao": [
+        "3203"
+      ],
+      "Maria Aurora": [
+        "3202"
+      ],
+      "San Luis": [
+        "3201"
+      ],
+      "Baler": [
+        "3200"
+      ]
+    }
+  },
+  "": {
+    "": {
+      "": [
+        ""
+      ]
+    }
+  },
+  "Region 12 (SOCCSKSARGEN)": {
+    "Sultan Kudarat": {
+      "Tacurong": [
+        "9800"
+      ],
+      "Sen. Ninoy Aquino": [
+        "9811"
+      ],
+      "Pres. Quirino": [
+        "9804"
+      ],
+      "Palimbang": [
+        "9809"
+      ],
+      "Mariano Marcos": [
+        "9802"
+      ],
+      "Lutayan": [
+        "9803"
+      ],
+      "Lebak (Salaman)": [
+        "9807"
+      ],
+      "Kalamansig": [
+        "9808"
+      ],
+      "Isulan": [
+        "9805"
+      ],
+      "Esperanza (Ampatuan)": [
+        "9806"
+      ],
+      "Columbio": [
+        "9801"
+      ],
+      "Bagumbayan": [
+        "9810"
+      ]
+    },
+    "South Cotabato": {
+      "Tupi": [
+        "9505"
+      ],
+      "Tantangan": [
+        "9510"
+      ],
+      "Tampakan": [
+        "9507"
+      ],
+      "Surallah": [
+        "9512"
+      ],
+      "Sto. Niño": [
+        "9509"
+      ],
+      "Polomolok": [
+        "9504"
+      ],
+      "Norala": [
+        "9508"
+      ],
+      "Lake Sebu": [
+        "9518"
+      ],
+      "Koronadal": [
+        "9506"
+      ],
+      "Gen. Santos City": [
+        "9500"
+      ],
+      "Banga": [
+        "9511"
+      ]
+    },
+    "Agusan del Norte": {
+      "T'boli": [
+        "9513"
+      ],
+      "Kiamba": [
+        "9514"
+      ]
+    },
+    "Sarangani": {
+      "Malungon": [
+        "9503"
+      ],
+      "Malapatan": [
+        "9516"
+      ],
+      "Maitum": [
+        "9515"
+      ],
+      "Maasim": [
+        "9502"
+      ],
+      "Glan": [
+        "9517"
+      ],
+      "Alabel": [
+        "9501"
+      ]
+    },
+    "Cotabato (North)": {
+      "Tulunan": [
+        "9403"
+      ],
+      "Pre. Roxas": [
+        "9405"
+      ],
+      "Pikit": [
+        "9409"
+      ],
+      "Pigkawayan": [
+        "9412"
+      ],
+      "M'lang": [
+        "9402"
+      ],
+      "Midsayap": [
+        "9410"
+      ],
+      "Matalam": [
+        "9406"
+      ],
+      "Makilala": [
+        "9401"
+      ],
+      "Magpet": [
+        "9404"
+      ],
+      "Libungan": [
+        "9411"
+      ],
+      "Kidapawan": [
+        "9400"
+      ],
+      "Kabacan": [
+        "9407"
+      ],
+      "Carmen": [
+        "9408"
+      ],
+      "Banisilan": [
+        "9416"
+      ],
+      "Arakan": [
+        "9417"
+      ],
+      "Antipas": [
+        "9414"
+      ],
+      "Aleosan": [
+        "9415"
+      ],
+      "Alamada": [
+        "9413"
+      ]
+    }
+  },
+  "Region 11 (Davao Region)": {
+    "Davao Oriental": {
+      "Tarragona": [
+        "8201"
+      ],
+      "San Isidro": [
+        "8209"
+      ],
+      "Mati": [
+        "8200"
+      ],
+      "Manay": [
+        "8202"
+      ],
+      "Lupon": [
+        "8207"
+      ],
+      "Gov. Generoso": [
+        "8210"
+      ],
+      "Cateel": [
+        "8205"
+      ],
+      "Caraga": [
+        "8203"
+      ],
+      "Boston": [
+        "8206"
+      ],
+      "Banaybanay": [
+        "8208"
+      ],
+      "Baganga": [
+        "8204"
+      ]
+    },
+    "Davao Occidental": {
+      "Sarangani": [
+        "8015"
+      ],
+      "Santa Maria": [
+        "8011"
+      ],
+      "Malita": [
+        "8012"
+      ],
+      "Jose Abad Santos": [
+        "8014"
+      ],
+      "Don Marcelino": [
+        "8013"
+      ]
+    },
+    "Davao del Sur": {
+      "University of Mindanao": [
+        "8026"
+      ],
+      "Toril": [
+        "8025"
+      ],
+      "Tibungco": [
+        "8024"
+      ],
+      "Talomo": [
+        "8023"
+      ],
+      "Sulop": [
+        "8009"
+      ],
+      "Santa Cruz": [
+        "8001"
+      ],
+      "Padada": [
+        "8007"
+      ],
+      "Mintal": [
+        "8022"
+      ],
+      "Matina": [
+        "8021"
+      ],
+      "Matanao": [
+        "8003"
+      ],
+      "Mandug": [
+        "8020"
+      ],
+      "Malalag": [
+        "8010"
+      ],
+      "Magsaysay": [
+        "8004"
+      ],
+      "Kiblawan": [
+        "8008"
+      ],
+      "Hagonoy": [
+        "8006"
+      ],
+      "Digos": [
+        "8002"
+      ],
+      "Davao International Airport": [
+        "8019"
+      ],
+      "Davao City": [
+        "8000"
+      ],
+      "Calinan": [
+        "8018"
+      ],
+      "Bunawan": [
+        "8017"
+      ],
+      "Bansalan": [
+        "8005"
+      ],
+      "Ateneo": [
+        "8016"
+      ]
+    },
+    "Davao Del Norte": {
+      "Talaingod": [
+        "8107"
+      ],
+      "Tagum": [
+        "8100"
+      ],
+      "Santo Tomas": [
+        "8112"
+      ],
+      "San Isidro": [
+        "8121"
+      ],
+      "Samal": [
+        "8119"
+      ],
+      "Panabo": [
+        "8105"
+      ],
+      "New Corella": [
+        "8104"
+      ],
+      "Kaputian": [
+        "8120"
+      ],
+      "Kapalong": [
+        "8113"
+      ],
+      "Carmen": [
+        "8101"
+      ],
+      "Braulio E. Dujali": [
+        "8106"
+      ],
+      "Babak": [
+        "8118"
+      ],
+      "Asuncion (formerly Saug)": [
+        "8102"
+      ]
+    },
+    "Davao De Oro (Formerly Compostela Valley)": {
+      "Pantukan": [
+        "8809"
+      ],
+      "New Bataan": [
+        "8804"
+      ],
+      "Nabunturan": [
+        "8800"
+      ],
+      "Montevista": [
+        "8801"
+      ],
+      "Monkayo": [
+        "8805"
+      ],
+      "Mawab": [
+        "8802"
+      ],
+      "Maragusan (formerly San Mariano)": [
+        "8808"
+      ],
+      "Maco": [
+        "8806"
+      ],
+      "Mabini": [
+        "8807"
+      ],
+      "Laak (formerly San Vicente)": [
+        "8810"
+      ],
+      "Compostela": [
+        "8803"
+      ]
+    }
+  },
+  "Region 10 (Northern Mindanao)": {
+    "Misamis Oriental": {
+      "Villanueva": [
+        "9002"
+      ],
+      "Talisayan": [
+        "9012"
+      ],
+      "Sugbongcogon": [
+        "9009"
+      ],
+      "Salay": [
+        "9007"
+      ],
+      "Opol": [
+        "9016"
+      ],
+      "Naawan": [
+        "9023"
+      ],
+      "Medina": [
+        "9013"
+      ],
+      "Manticao": [
+        "9024"
+      ],
+      "Magsaysay": [
+        "9015"
+      ],
+      "Lugait": [
+        "9025"
+      ],
+      "Libertad": [
+        "9021"
+      ],
+      "Lagonglong": [
+        "9006"
+      ],
+      "Laguindingan": [
+        "9019"
+      ],
+      "Kinoguitan": [
+        "9010"
+      ],
+      "Jasaan": [
+        "9003"
+      ],
+      "Initao": [
+        "9022"
+      ],
+      "Gitagum": [
+        "9020"
+      ],
+      "Gingoog City": [
+        "9014"
+      ],
+      "El Salvador": [
+        "9017"
+      ],
+      "Claveria": [
+        "9004"
+      ],
+      "Cagayan de Oro City": [
+        "9000"
+      ],
+      "Binuangan": [
+        "9008"
+      ],
+      "Balingoan": [
+        "9011",
+        "9011"
+      ],
+      "Balingasag": [
+        "9005"
+      ],
+      "Alubijid": [
+        "9018"
+      ]
+    },
+    "Aurora": {
+      "Tagoloan": [
+        "9001"
+      ],
+      "Sapang dalaga": [
+        "7212"
+      ]
+    },
+    "Misamis Occidental": {
+      "Tudela": [
+        "7202"
+      ],
+      "Tangub City": [
+        "7214"
+      ],
+      "Sinacaban": [
+        "7203"
+      ],
+      "Plaridel": [
+        "7209"
+      ],
+      "Panaon": [
+        "7205"
+      ],
+      "Ozamis City": [
+        "7200"
+      ],
+      "Oroquieta City": [
+        "7207"
+      ],
+      "Lopez Jaena": [
+        "7208"
+      ],
+      "Jimenez": [
+        "7204"
+      ],
+      "Don Victoriano Chiongbian": [
+        "7216"
+      ],
+      "Concepcion": [
+        "7213"
+      ],
+      "Clarin": [
+        "7201"
+      ],
+      "Calamba": [
+        "7210"
+      ],
+      "Bonifacio": [
+        "7215"
+      ],
+      "Baliangao": [
+        "7211"
+      ],
+      "Aloran": [
+        "7206"
+      ]
+    },
+    "Lanao del Norte": {
+      "Tubod": [
+        "9209"
+      ],
+      "Tangcal": [
+        "9220"
+      ],
+      "Tagoloan": [
+        "9222"
+      ],
+      "Sultan Naga Dimaporo (formerly Karomatan)": [
+        "9215"
+      ],
+      "Sapad": [
+        "9213"
+      ],
+      "Salvador": [
+        "9212"
+      ],
+      "Poona Piagapo": [
+        "9204"
+      ],
+      "Pantar": [
+        "9218"
+      ],
+      "Pantao Ragat": [
+        "9208"
+      ],
+      "Nunungan": [
+        "9216"
+      ],
+      "Munai": [
+        "9219"
+      ],
+      "Matungao": [
+        "9203"
+      ],
+      "Maigo": [
+        "9206"
+      ],
+      "Magsaysay": [
+        "9221"
+      ],
+      "Linamon": [
+        "9201"
+      ],
+      "Lala": [
+        "9211"
+      ],
+      "Kolambugan": [
+        "9207"
+      ],
+      "Kauswagan": [
+        "9202"
+      ],
+      "Kapatagan": [
+        "9214"
+      ],
+      "Iligan City": [
+        "9200"
+      ],
+      "Baroy": [
+        "9210"
+      ],
+      "Baloi": [
+        "9217"
+      ],
+      "Bacolod": [
+        "9205"
+      ]
+    },
+    "Camiguin": {
+      "Sagay": [
+        "9103"
+      ],
+      "Mambajao": [
+        "9100"
+      ],
+      "Mahinog": [
+        "9101"
+      ],
+      "Guinsiliban": [
+        "9102"
+      ],
+      "Catarman": [
+        "9104"
+      ]
+    },
+    "Bukidnon": {
+      "Valencia": [
+        "8709"
+      ],
+      "Talakag": [
+        "8708"
+      ],
+      "Sumilao": [
+        "8701"
+      ],
+      "San Fernando": [
+        "8711"
+      ],
+      "Quezon": [
+        "8715"
+      ],
+      "Phillips": [
+        "8705"
+      ],
+      "Pangantucan": [
+        "8717"
+      ],
+      "Musuan": [
+        "8710"
+      ],
+      "Maramag": [
+        "8714"
+      ],
+      "Manolo Fortich": [
+        "8703"
+      ],
+      "Malitbog": [
+        "8704"
+      ],
+      "Malaybalay": [
+        "8700"
+      ],
+      "Libona": [
+        "8706"
+      ]
+    },
+    "Agusan del Norte": {
+      "Lantapan": [
+        "8722"
+      ],
+      "Kitaotao": [
+        "8716"
+      ]
+    }
+  },
+  "Region 2 (Cagayan Valley)": {
+    "Quirino": {
+      "Aglipay": [
+        "3403"
+      ],
+      "Cabarroguis": [
+        "3400"
+      ],
+      "Diffun": [
+        "3401"
+      ],
+      "Maddela": [
+        "3404"
+      ],
+      "Nagtipunan": [
+        "3405"
+      ],
+      "Saguday": [
+        "3402"
+      ]
+    },
+    "Nueva Vizcaya": {
+      "Solano": [
+        "3709"
+      ],
+      "Sta. Fe": [
+        "3705"
+      ],
+      "Quezon": [
+        "3713"
+      ],
+      "Kayapa": [
+        "3708"
+      ],
+      "Kasibu": [
+        "3703"
+      ],
+      "Dupax del Sur": [
+        "3707"
+      ],
+      "Dupax del Norte": [
+        "3706"
+      ],
+      "Diadi": [
+        "3712"
+      ],
+      "Bayombong": [
+        "3700"
+      ],
+      "Bambang": [
+        "3702"
+      ],
+      "Bagabag": [
+        "3711"
+      ],
+      "Aritao": [
+        "3704"
+      ],
+      "Ambaguio": [
+        "3701"
+      ],
+      "Alfonso Castañeda": [
+        "3714"
+      ]
+    },
+    "Isabela": {
+      "San Guillermo": [
+        "3308"
+      ],
+      "San Isidro": [
+        "3310"
+      ],
+      "San Manuel": [
+        "3317"
+      ],
+      "San Mariano": [
+        "3332"
+      ],
+      "San Mateo": [
+        "3318"
+      ],
+      "San Pablo": [
+        "3329"
+      ],
+      "Sta. Maria": [
+        "3330"
+      ],
+      "Santiago CIty": [
+        "3311"
+      ],
+      "Sto. Tomas": [
+        "3327"
+      ],
+      "Tumauini": [
+        "3325"
+      ],
+      "Quirino": [
+        "3321"
+      ],
+      "Ramon": [
+        "3319"
+      ],
+      "Reina Mercedes": [
+        "3303"
+      ],
+      "Roxas": [
+        "3320"
+      ],
+      "San Agustin": [
+        "3314"
+      ],
+      "Gamu": [
+        "3301"
+      ],
+      "Jones": [
+        "3313"
+      ],
+      "Luna": [
+        "3304"
+      ],
+      "Maconacon": [
+        "3333"
+      ],
+      "Mallig": [
+        "3323"
+      ],
+      "Naguillan": [
+        "3302"
+      ],
+      "Palanan": [
+        "3334"
+      ],
+      "Quezon": [
+        "3324"
+      ],
+      "Cordon": [
+        "3312"
+      ],
+      "Delfin Albano": [
+        "3326"
+      ],
+      "Dinapigue": [
+        "3336"
+      ],
+      "Divilacan": [
+        "3335"
+      ],
+      "Echague": [
+        "3309"
+      ],
+      "City of Ilagan": [
+        "3300"
+      ],
+      "Alicia": [
+        "3306"
+      ],
+      "Angadanan": [
+        "3307"
+      ],
+      "Aurora": [
+        "3316"
+      ],
+      "Benito Soliven": [
+        "3331"
+      ],
+      "Burgos": [
+        "3322"
+      ],
+      "Cabagan": [
+        "3328"
+      ],
+      "Cabatuan": [
+        "3315"
+      ],
+      "City of Cauayan": [
+        "3305"
+      ]
+    },
+    "Cagayan": {
+      "Sta. Teresita": [
+        "3512"
+      ],
+      "Santo Niño": [
+        "3525"
+      ],
+      "Tuao": [
+        "3528"
+      ],
+      "Tuguegarao City": [
+        "3500"
+      ],
+      "Santa Praxedes": [
+        "3521"
+      ],
+      "Sta. Ana": [
+        "3514"
+      ],
+      "Solana": [
+        "3503"
+      ],
+      "Claveria": [
+        "3519"
+      ],
+      "Enrile": [
+        "3501"
+      ],
+      "Gattaran": [
+        "3508"
+      ],
+      "Gonzaga": [
+        "3513"
+      ],
+      "Iguig": [
+        "3504"
+      ],
+      "Lal-lo": [
+        "3509"
+      ],
+      "Lasam": [
+        "3524"
+      ],
+      "Pamplona": [
+        "3522"
+      ],
+      "Peñablanca": [
+        "3502"
+      ],
+      "Piat": [
+        "3527"
+      ],
+      "Rizal": [
+        "3526"
+      ],
+      "Sanchez-Mira": [
+        "3518"
+      ],
+      "Abulug": [
+        "3517"
+      ],
+      "Alcala": [
+        "3507"
+      ],
+      "Allacapan": [
+        "3523"
+      ],
+      "Amulung": [
+        "3505"
+      ],
+      "Aparri": [
+        "3515"
+      ],
+      "Baggao": [
+        "3506"
+      ],
+      "Ballesteros": [
+        "3516"
+      ],
+      "Buguey": [
+        "3511"
+      ],
+      "Calayan": [
+        "3520"
+      ],
+      "Camalaniugan": [
+        "3510"
+      ]
+    },
+    "Batanes": {
+      "Itbayat": [
+        "3905"
+      ],
+      "Basco": [
+        "3900"
+      ],
+      "Ivana": [
+        "3902"
+      ],
+      "Mahatao": [
+        "3901"
+      ],
+      "Sabtang": [
+        "3904"
+      ],
+      "Uyugan": [
+        "3903"
+      ]
+    }
+  }
+}
