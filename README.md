@@ -2,6 +2,50 @@
 
 Philippines zip codes package
 
+## Installation
+
+Ensure you have Python 3.9 or higher installed.
+
+Install the package using pip:
+
+```bash
+pip install phzipcodes
+```
+
+## Usage
+
+```python
+import phzipcodes
+
+# Get zip code information by zip code
+zip_info = phzipcodes.get_by_zip("1000")
+print(zip_info)
+# Output: code='1000' city_municipality='Ermita' province='Metro Manila' region='NCR (National Capital Region)'
+
+# Search for zip codes
+results = phzipcodes.search("Manila")
+for result in results:
+    print(result)
+
+# Advanced search options
+results = phzipcodes.search("Cebu", fields=['province'], match_type='exact')
+for result in results:
+    print(result)
+
+# Get all unique regions
+regions = phzipcodes.get_regions()
+print(regions)
+
+# Get all provinces in a specific region
+provinces = phzipcodes.get_provinces("NCR (National Capital Region)")
+print(provinces)
+
+# Get all cities/municipalities in a specific province
+cities = phzipcodes.get_cities_municipalities("Metro Manila")
+print(cities)
+
+```
+
 ## API Reference
 
 ### `search(query: str, fields: List[str] = None, match_type: str = "contains") -> List[ZipCode]`
@@ -36,7 +80,7 @@ Get all provinces in a specific region.
   - `region`: str - The region to get provinces for
 - **Returns:** List[str] - List of provinces in the specified region
 
-### `get_cities_municipalities(province: str) -> List[str]`
+### `get_cities(province: str) -> List[str]`
 
 Get all cities/municipalities in a specific province.
 
@@ -65,17 +109,36 @@ To keep data current, use custom scraper tool (`scraper.py`).
 ## Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/jayson-panganiban/phzipcodes.git
    cd phzipcodes
    ```
-2. **Install dependencies**
+
+2. **Install Poetry if you haven't already**
+
+   ```bash
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+
+3. **Install dependencies**
 
    ```bash
    poetry install
    ```
 
-3. **Run Tests**
+4. **Run Tests**
+
    ```bash
    poetry run pytest
    ```
+
+5. **To update the zip codes data, run the scraper**
+
+   ```bash
+   poetry run python phzipcodes/scraper.py
+   ```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
