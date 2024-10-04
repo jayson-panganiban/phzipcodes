@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "phzipcodes"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python package for Philippines zip codes"
 authors = ["Jayson <jsoncp@proton.me>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/jayson-panganiban/phzipcodes"
 keywords = ["philippines", "zipcode", "zipcodes", "postal code"]
+include = ["phzipcodes/data/ph_zip_codes.json"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -25,3 +26,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 phzipcodes = "phzipcodes:app"
+
+[tool.poetry.package-data]
+phzipcodes = ["data/*.json"]

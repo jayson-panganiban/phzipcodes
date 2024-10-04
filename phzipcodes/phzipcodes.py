@@ -18,7 +18,7 @@ class PhZipCodes:
         self.data: dict[str, ZipCode] = self._load_data()
 
     def _load_data(self) -> dict[str, ZipCode]:
-        data_file = Path(__file__).parent.parent / "data" / "ph_zip_codes.json"
+        data_file = Path(__file__).parent / "data" / "ph_zip_codes.json"
         with data_file.open() as f:
             raw_data = json.load(f)
         return {
