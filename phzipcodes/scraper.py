@@ -69,7 +69,7 @@ def organize_data(zip_codes: list[ZipCode]) -> dict:
 
 def save_to_json(data: dict, filepath: str | Path | None = None):
     if filepath is None:
-        data_dir = Path(__file__).parent.parent / "data"
+        data_dir = Path(__file__).parent / "data"
         data_dir.mkdir(parents=True, exist_ok=True)
         filepath = data_dir / "ph_zip_codes.json"
     else:
@@ -95,3 +95,5 @@ async def main(output_path: str | Path | None = None):
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+# TODO: Make this a CLI tool
