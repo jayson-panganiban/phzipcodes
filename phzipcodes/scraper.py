@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import Callable
 
 import aiohttp
-from bs4 import BeautifulSoup
-from toolz import curry, groupby, pipe
+from bs4 import BeautifulSoup, Tag
+from toolz import curry, groupby, pipe  # type: ignore
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -32,6 +32,8 @@ async def fetch_page(url: str) -> str:
 def parse_html(html: str) -> list[list[str]]:
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table")
+    if table is None or not isinstance(table, Tag):
+        return []
     return [
         [td.text.strip() for td in row.find_all("td")]
         for row in table.find_all("tr")[1:]
