@@ -1,7 +1,7 @@
 import json
 from functools import cache
 from pathlib import Path
-from typing import Callable, List, Optional
+from typing import Callable
 
 from pydantic import BaseModel
 
@@ -14,8 +14,10 @@ class ZipCode(BaseModel):
 
 
 class PhZipCodes:
-    def __init__(self):
+    def __init__(self) -> None:
         self.data: dict[str, ZipCode] = self._load_data()
+        self._get_by_zip_cache = cache(self._get_by_zip_uncached)
+        self._cached_search = cache(self._cached_search_uncached)
 
     def _load_data(self) -> dict[str, ZipCode]:
         data_file = Path(__file__).parent / "data" / "ph_zip_codes.json"
@@ -34,13 +36,14 @@ class PhZipCodes:
             for code in zip_codes
         }
 
-    @cache
-    def get_by_zip(self, zip_code: str) -> Optional[ZipCode]:
+    def get_by_zip(self, zip_code: str) -> ZipCode | None:
+        return self._get_by_zip_cache(zip_code)
+
+    def _get_by_zip_uncached(self, zip_code: str) -> ZipCode | None:
         return self.data.get(zip_code)
 
-    @cache
-    def _cached_search(
-        self, query: str, fields: tuple, match_type: str
+    def _cached_search_uncached(
+        self, query: str, fields: tuple[str, ...], match_type: str
     ) -> tuple[ZipCode, ...]:
         query = query.lower()
         match_func: Callable[[str, str], bool] = {
@@ -55,15 +58,18 @@ class PhZipCodes:
         )
 
     def search(
-        self, query: str, fields: List[str] = None, match_type: str = "contains"
-    ) -> List[ZipCode]:
-        fields = tuple(fields or ["city_municipality", "province", "region"])
-        return list(self._cached_search(query, fields, match_type))
+        self,
+        query: str,
+        fields: list[str] | None = None,
+        match_type: str = "contains",
+    ) -> list[ZipCode]:
+        filtered_fields = tuple(fields or ["city_municipality", "province", "region"])
+        return list(self._cached_search(query, filtered_fields, match_type))
 
-    def get_regions(self) -> List[str]:
+    def get_regions(self) -> list[str]:
         return list({zip_code.region for zip_code in self.data.values()})
 
-    def get_provinces(self, region: str) -> List[str]:
+    def get_provinces(self, region: str) -> list[str]:
         return list(
             {
                 zip_code.province
@@ -72,7 +78,7 @@ class PhZipCodes:
             }
         )
 
-    def get_cities_municipalities(self, province: str) -> List[str]:
+    def get_cities_municipalities(self, province: str) -> list[str]:
         return list(
             {
                 zip_code.city_municipality
