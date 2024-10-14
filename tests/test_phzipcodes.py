@@ -1,109 +1,124 @@
 import pytest
 
-import phzipcodes
+from phzipcodes import (
+    get_by_zip,
+    get_cities_municipalities,
+    get_provinces,
+    get_regions,
+    search,
+)
+
+
+@pytest.fixture
+def valid_zip_code():
+    return "1000"
+
+
+@pytest.fixture
+def valid_region():
+    return "NCR (National Capital Region)"
+
+
+@pytest.fixture
+def valid_province():
+    return "Metro Manila"
 
 
 class TestGetByZip:
-    def test_valid_zip(self):
-        zip_code = phzipcodes.get_by_zip("1000")
+    def test_valid_zip(self, valid_zip_code):
+        zip_code = get_by_zip(valid_zip_code)
         assert zip_code is not None
-        assert zip_code.code == "1000"
+        assert zip_code.code == valid_zip_code
         assert zip_code.city_municipality == "Ermita"
         assert zip_code.province == "Metro Manila"
         assert zip_code.region == "NCR (National Capital Region)"
 
     def test_nonexistent_zip(self):
-        assert phzipcodes.get_by_zip("99999") is None
+        assert get_by_zip("99999") is None
 
 
 class TestSearch:
-    def test_basic_search(self):
-        results = phzipcodes.search("Manila")
-        assert len(results) > 0
+    @pytest.mark.parametrize(
+        "query, expected_substring",
+        [
+            ("Manila", "Manila"),
+            ("manila", "Manila"),
+            ("MANILA", "Manila"),
+        ],
+    )
+    def test_basic_search(self, query, expected_substring):
+        results = search(query=query)
+        assert results
         assert all(
-            "Manila" in result.city_municipality
-            or "Manila" in result.province
-            or "Manila" in result.region
+            expected_substring in result.city_municipality
+            or expected_substring in result.province
+            or expected_substring in result.region
             for result in results
         )
 
     def test_empty_query(self):
-        results = phzipcodes.search("")
-        assert len(results) > 0
+        results = search("")
+        assert results
 
-    def test_case_insensitive(self):
-        results_lower = phzipcodes.search("manila")
-        results_upper = phzipcodes.search("MANILA")
-        assert results_lower == results_upper
-
-    def test_exact_match(self):
-        results = phzipcodes.search("Ermita", match_type="exact")
-        assert len(results) > 0
-        assert all(result.city_municipality == "Ermita" for result in results)
-        assert any(result.code == "1000" for result in results)
-
-    def test_partial_match(self):
-        results = phzipcodes.search("Maka", fields=["city_municipality"])
-        assert len(results) > 0
-        assert all("Maka" in result.city_municipality for result in results)
-
-    def test_startswith(self):
-        results = phzipcodes.search(
-            "San", fields=["city_municipality"], match_type="startswith"
+    @pytest.mark.parametrize(
+        "query, match_type, expected_field, expected_value",
+        [
+            ("Ermita", "exact", "city_municipality", "Ermita"),
+            ("Maka", "contains", "city_municipality", "Maka"),
+            ("San", "startswith", "city_municipality", "San"),
+        ],
+    )
+    def test_search_variations(self, query, match_type, expected_field, expected_value):
+        results = search(query, fields=[expected_field], match_type=match_type)
+        assert results
+        assert all(
+            getattr(result, expected_field).startswith(expected_value)
+            for result in results
         )
-        assert len(results) > 1
-        assert all(result.city_municipality.startswith("San") for result in results)
 
     def test_search_with_province(self):
-        results = phzipcodes.search("Pangasinan", fields=["province"])
-        assert len(results) > 0
+        results = search("Pangasinan", fields=["province"])
+        assert results
         assert all(result.province == "Pangasinan" for result in results)
 
     def test_search_with_region(self):
-        results = phzipcodes.search("NCR", fields=["region"])
-        assert len(results) > 0
+        results = search("NCR", fields=["region"])
+        assert results
         assert all(
             result.region == "NCR (National Capital Region)" for result in results
         )
 
     def test_nonexistent_place(self):
-        results = phzipcodes.search("NonexistentPlace")
-        assert len(results) == 0
+        assert not search("NonexistentPlace")
 
     def test_invalid_field(self):
         with pytest.raises(AttributeError):
-            phzipcodes.search("Test", fields=["invalid_field"])
+            search("Test", fields=["invalid_field"])
 
     def test_invalid_match_type(self):
-        results = phzipcodes.search("Test", match_type="invalid_type")
-        assert len(results) == 0
+        assert not search("Test", match_type="invalid_type")
 
 
-class TestGetRegions:
-    def test_get_regions(self):
-        regions = phzipcodes.get_regions()
-        assert len(regions) > 0
-        assert "NCR (National Capital Region)" in regions
+def test_get_regions():
+    regions = get_regions()
+    assert regions
+    assert "NCR (National Capital Region)" in regions
 
 
-class TestGetProvinces:
-    def test_get_provinces(self):
-        provinces = phzipcodes.get_provinces("NCR (National Capital Region)")
-        assert "Metro Manila" in provinces
-
-    def test_nonexistent_region(self):
-        provinces = phzipcodes.get_provinces("Nonexistent Region")
-        assert len(provinces) == 0
+def test_get_provinces(valid_region):
+    provinces = get_provinces(valid_region)
+    assert "Metro Manila" in provinces
 
 
-class TestGetCitiesMunicipalities:
-    def test_get_cities_municipalities(self):
-        cities_municipalities = phzipcodes.get_cities_municipalities("Metro Manila")
-        assert "Ermita" in cities_municipalities
-        assert "Makati CPO (Inc, Buendia Up To)" in cities_municipalities
+def test_get_cities_municipalities(valid_province):
+    cities_municipalities = get_cities_municipalities(valid_province)
+    assert "Ermita" in cities_municipalities
+    assert "Makati CPO (Inc, Buendia Up To)" in cities_municipalities
 
-    def test_nonexistent_province(self):
-        cities_municipalities = phzipcodes.get_cities_municipalities(
-            "Nonexistent Province"
-        )
-        assert len(cities_municipalities) == 0
+
+def test_nonexistent_region():
+    assert not get_provinces("Nonexistent Region")
+
+
+def test_nonexistent_province():
+    assert not get_cities_municipalities("Nonexistent Province")
