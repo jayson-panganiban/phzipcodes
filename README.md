@@ -80,13 +80,13 @@ Get all provinces in a specific region.
   - `region`: str - The region to get provinces for
 - **Returns:** List[str] - List of provinces in the specified region
 
-### `get_cities(province: str) -> List[str]`
+### `get_cities_municipalities(province: str) -> List[str]`
 
 Get all cities/municipalities in a specific province.
 
 - **Parameters:**
   - `province`: str - The province to get cities for
-- **Returns:** List[str] - List of cities in the specified province
+- **Returns:** List[str] - List of cities/municipalities in the specified province
 
 ## Data Structure
 
@@ -94,10 +94,10 @@ The package uses a `ZipCode` class with the following attributes:
 
 ```python
 class ZipCode(BaseModel):
-    region: str
-    province: str
-    city_municipality: str
     code: str
+    city_municipality: str
+    province: str
+    region: str
 ```
 
 ## Data Source and Collection
@@ -127,13 +127,38 @@ To keep data current, use custom scraper tool (`scraper.py`).
    poetry install
    ```
 
-4. **Run Tests**
+4. **Set up pre-commit hooks**
+
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+5. **Run Tests**
 
    ```bash
    poetry run pytest
    ```
 
-5. **To update the zip codes data, run the scraper**
+6. **Run linter**
+
+   ```bash
+   poetry run lint
+   ```
+
+7. **Run formatter**
+
+   ```bash
+   poetry run format
+   ```
+
+8. **Run type checker**
+
+   ```bash
+   poetry run typecheck
+   ```
+
+9. **To update the zip codes data, run the scraper**
 
    ```bash
    poetry run python phzipcodes/scraper.py
