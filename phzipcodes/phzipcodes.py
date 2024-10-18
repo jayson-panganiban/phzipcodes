@@ -1,9 +1,13 @@
 import json
-from functools import cache
+from functools import cache, lru_cache
 from pathlib import Path
 from typing import Callable
 
 from pydantic import BaseModel
+
+# Constants
+DATA_FILE_PATH = Path(__file__).parent / "data" / "ph_zip_codes.json"
+DEFAULT_SEARCH_FIELDS = ("city_municipality", "province", "region")
 
 
 class ZipCode(BaseModel):
@@ -13,79 +17,86 @@ class ZipCode(BaseModel):
     region: str
 
 
-class PhZipCodes:
-    def __init__(self) -> None:
-        self.data: dict[str, ZipCode] = self._load_data()
-        self._get_by_zip_cache = cache(self._get_by_zip_uncached)
-        self._cached_search = cache(self._cached_search_uncached)
+@lru_cache(maxsize=1)
+def load_data() -> dict[str, ZipCode]:
+    """Load zip code data from JSON file and return as a dictionary."""
+    with DATA_FILE_PATH.open() as f:
+        raw_data = json.load(f)
+    return {
+        code: ZipCode(
+            code=code,
+            city_municipality=city_municipality,
+            province=province,
+            region=region,
+        )
+        for region, provinces in raw_data.items()
+        for province, cities_municipalities in provinces.items()
+        for city_municipality, zip_codes in cities_municipalities.items()
+        for code in zip_codes
+    }
 
-    def _load_data(self) -> dict[str, ZipCode]:
-        data_file = Path(__file__).parent / "data" / "ph_zip_codes.json"
-        with data_file.open() as f:
-            raw_data = json.load(f)
-        return {
-            code: ZipCode(
-                code=code,
-                city_municipality=city_municipality,
-                province=province,
-                region=region,
-            )
-            for region, provinces in raw_data.items()
-            for province, cities_municipalities in provinces.items()
-            for city_municipality, zip_codes in cities_municipalities.items()
-            for code in zip_codes
+
+@cache
+def get_by_zip(zip_code: str) -> ZipCode | None:
+    """Retrieve zip code information by zip code."""
+    return load_data().get(zip_code)
+
+
+def get_match_function(match_type: str) -> Callable[[str, str], bool]:
+    """Return the appropriate match function based on the match type."""
+    return {
+        "contains": lambda field, q: q in field.lower(),
+        "startswith": lambda field, q: field.lower().startswith(q),
+        "exact": lambda field, q: field.lower() == q,
+    }.get(match_type, lambda field, q: q in field.lower())
+
+
+@cache
+def search(
+    query: str,
+    fields: tuple[str, ...] = DEFAULT_SEARCH_FIELDS,
+    match_type: str = "contains",
+) -> tuple[ZipCode, ...]:
+    """Search for zip codes based on query and criteria."""
+    lowered_query = query.lower()
+    match_func = get_match_function(match_type)
+    return tuple(
+        zip_code
+        for zip_code in load_data().values()
+        if any(match_func(getattr(zip_code, field), lowered_query) for field in fields)
+    )
+
+
+def get_unique_values(attribute: str) -> list[str]:
+    """Get unique values for a given attribute from all zip codes."""
+    return list({getattr(zip_code, attribute) for zip_code in load_data().values()})
+
+
+def get_regions() -> list[str]:
+    """Get all unique regions."""
+    return get_unique_values("region")
+
+
+def get_provinces(region: str) -> list[str]:
+    """Get all provinces in a specific region."""
+    return list(
+        {
+            zip_code.province
+            for zip_code in load_data().values()
+            if zip_code.region == region
         }
+    )
 
-    def get_by_zip(self, zip_code: str) -> ZipCode | None:
-        return self._get_by_zip_cache(zip_code)
 
-    def _get_by_zip_uncached(self, zip_code: str) -> ZipCode | None:
-        return self.data.get(zip_code)
-
-    def _cached_search_uncached(
-        self, query: str, fields: tuple[str, ...], match_type: str
-    ) -> tuple[ZipCode, ...]:
-        query = query.lower()
-        match_func: Callable[[str, str], bool] = {
-            "contains": lambda field, q: q in field.lower(),
-            "startswith": lambda field, q: field.lower().startswith(q),
-            "exact": lambda field, q: field.lower() == q,
-        }.get(match_type, lambda field, q: q in field.lower())
-        return tuple(
-            zip_code
-            for zip_code in self.data.values()
-            if any(match_func(getattr(zip_code, field), query) for field in fields)
-        )
-
-    def search(
-        self,
-        query: str,
-        fields: list[str] | None = None,
-        match_type: str = "contains",
-    ) -> list[ZipCode]:
-        filtered_fields = tuple(fields or ["city_municipality", "province", "region"])
-        return list(self._cached_search(query, filtered_fields, match_type))
-
-    def get_regions(self) -> list[str]:
-        return list({zip_code.region for zip_code in self.data.values()})
-
-    def get_provinces(self, region: str) -> list[str]:
-        return list(
-            {
-                zip_code.province
-                for zip_code in self.data.values()
-                if zip_code.region == region
-            }
-        )
-
-    def get_cities_municipalities(self, province: str) -> list[str]:
-        return list(
-            {
-                zip_code.city_municipality
-                for zip_code in self.data.values()
-                if zip_code.province == province
-            }
-        )
+def get_cities_municipalities(province: str) -> list[str]:
+    """Get all cities/municipalities in a specific province."""
+    return list(
+        {
+            zip_code.city_municipality
+            for zip_code in load_data().values()
+            if zip_code.province == province
+        }
+    )
 
 
 # TODO: Implement typer CLI
