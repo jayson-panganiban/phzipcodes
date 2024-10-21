@@ -7,11 +7,15 @@ dist/
 build/
 *.egg
 
-# Poetry
+# Virtual environment
+venv/
+env/
+*.venv
+*.virtualenv
 .venv/
 poetry.lock
 
-# IDEs and editors
+# IDE-specific files
 .vscode/
 .idea/
 *.swp
@@ -21,6 +25,10 @@ poetry.lock
 # Operating systems
 .DS_Store
 Thumbs.db
+
+# Logs and databases
+*.log
+
 
 # Testing
 .pytest_cache/
@@ -37,4 +45,9 @@ htmlcov/
 .env
 
 # Project-specific
-data/*.json
+*.csv
+*.json
+zipcode_data/
+
+# Dependency management
+pip-lock.txt
