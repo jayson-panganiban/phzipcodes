@@ -20,7 +20,7 @@ import phzipcodes
 # Get zip code information by zip code
 zip_info = phzipcodes.get_by_zip("1000")
 print(zip_info)
-# Output: code='1000' city_municipality='Ermita' province='Metro Manila' region='NCR (National Capital Region)'
+# Output: ZipCode(code='1000', city_municipality='Manila', province='Metro Manila', region='NCR')
 
 # Search for zip codes
 results = phzipcodes.search("Manila")
@@ -28,49 +28,52 @@ for result in results:
     print(result)
 
 # Advanced search options
-results = phzipcodes.search("Cebu", fields=['province'], match_type='exact')
-for result in results:
-    print(result)
+results = phzipcodes.search("Manila", fields=("city_municipality",), match_type="exact")
+print([result.code for result in results])
+# Output: ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008']
 
 # Get all unique regions
 regions = phzipcodes.get_regions()
-print(regions)
+print(regions[:3])
+# Output: ['NCR', 'CAR', 'Region I']
 
 # Get all provinces in a specific region
-provinces = phzipcodes.get_provinces("NCR (National Capital Region)")
+provinces = phzipcodes.get_provinces("NCR")
 print(provinces)
+# Output: ['Metro Manila']
 
 # Get all cities/municipalities in a specific province
 cities = phzipcodes.get_cities_municipalities("Metro Manila")
-print(cities)
+print(cities[:3])
+# Output: ['Manila', 'Quezon City', 'Caloocan']
 
 ```
 
 ## API Reference
 
-### `search(query: str, fields: List[str] = None, match_type: str = "contains") -> List[ZipCode]`
+### `search(query: str, fields: tuple[str, ...] = DEFAULT_SEARCH_FIELDS, match_type: str = "contains") -> tuple[ZipCode, ...]`
 
 Search for zip codes based on query and criteria.
 
 - **Parameters:**
   - `query`: str - The search query
-  - `fields`: List[str] (optional) - List of fields to search in (default: ["city", "province", "region"])
+  - `fields`: tuple[str, ...] (optional) - Fields to search in (default: city, province, region)
   - `match_type`: str (optional) - Type of match to perform (default: "contains")
-- **Returns:** List[ZipCode] - List of matching ZipCode objects
+- **Returns:** tuple[ZipCode, ...] - Tuple of matching ZipCode objects
 
-### `get_by_zip(zip_code: str) -> Optional[ZipCode]`
+### `get_by_zip(zip_code: str) -> ZipCode | None`
 
 Retrieve zip code information by zip code.
 
 - **Parameters:**
   - `zip_code`: str - The zip code to look up
-- **Returns:** Optional[ZipCode] - ZipCode object if found, None otherwise
+- **Returns:** ZipCode | None - ZipCode object if found, None otherwise
 
-### `get_regions() -> List[str]`
+### `get_regions() -> list[str]`
 
 Get all unique regions.
 
-- **Returns:** List[str] - List of all unique regions
+- **Returns:** list[str] - List of all unique regions
 
 ### `get_provinces(region: str) -> List[str]`
 
@@ -78,7 +81,7 @@ Get all provinces in a specific region.
 
 - **Parameters:**
   - `region`: str - The region to get provinces for
-- **Returns:** List[str] - List of provinces in the specified region
+- **Returns:** list[str] - List of provinces in the specified region
 
 ### `get_cities_municipalities(province: str) -> List[str]`
 
@@ -86,7 +89,7 @@ Get all cities/municipalities in a specific province.
 
 - **Parameters:**
   - `province`: str - The province to get cities for
-- **Returns:** List[str] - List of cities/municipalities in the specified province
+- **Returns:** list[str] - List of cities/municipalities in the specified province
 
 ## Data Structure
 
@@ -127,38 +130,37 @@ To keep data current, use custom scraper tool (`scraper.py`).
    poetry install
    ```
 
-4. **Set up pre-commit hooks**
+   Or using pip:
 
    ```bash
-   pip install pre-commit
-   pre-commit install
+   pip install -r requirements.txt
    ```
 
-5. **Run Tests**
+4. **Run Tests**
 
    ```bash
    poetry run pytest
    ```
 
-6. **Run linter**
+5. **Run linter**
 
    ```bash
    poetry run lint
    ```
 
-7. **Run formatter**
+6. **Run formatter**
 
    ```bash
    poetry run format
    ```
 
-8. **Run type checker**
+7. **Run type checker**
 
    ```bash
    poetry run typecheck
    ```
 
-9. **To update the zip codes data, run the scraper**
+8. **To update the zip codes data, run the scraper**
 
    ```bash
    poetry run python phzipcodes/scraper.py
