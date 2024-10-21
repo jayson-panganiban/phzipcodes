@@ -69,7 +69,7 @@ class TestSearch:
         ],
     )
     def test_search_variations(self, query, match_type, expected_field, expected_value):
-        results = search(query, fields=[expected_field], match_type=match_type)
+        results = search(query, fields=(expected_field,), match_type=match_type)
         assert results
         assert all(
             getattr(result, expected_field).startswith(expected_value)
@@ -77,12 +77,12 @@ class TestSearch:
         )
 
     def test_search_with_province(self):
-        results = search("Pangasinan", fields=["province"])
+        results = search("Pangasinan", fields=("province",))
         assert results
         assert all(result.province == "Pangasinan" for result in results)
 
     def test_search_with_region(self):
-        results = search("NCR", fields=["region"])
+        results = search("NCR", fields=("region",))
         assert results
         assert all(
             result.region == "NCR (National Capital Region)" for result in results
@@ -93,7 +93,7 @@ class TestSearch:
 
     def test_invalid_field(self):
         with pytest.raises(AttributeError):
-            search("Test", fields=["invalid_field"])
+            search("Test", fields=("invalid_field",))
 
     def test_invalid_match_type(self):
         assert not search("Test", match_type="invalid_type")
