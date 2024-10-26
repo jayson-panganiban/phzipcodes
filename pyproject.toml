@@ -32,9 +32,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 phzipcodes = "phzipcodes:app"
-lint = "ruff check ."
-format = "ruff format ."
-typecheck = "mypy ."
 
 [tool.ruff]
 line-length = 88
