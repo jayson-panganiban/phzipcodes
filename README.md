@@ -145,19 +145,19 @@ To keep data current, use custom scraper tool (`scraper.py`).
 5. **Run linter**
 
    ```bash
-   poetry run lint
+   poetry run ruff check .
    ```
 
 6. **Run formatter**
 
    ```bash
-   poetry run format
+   poetry run ruff format .
    ```
 
 7. **Run type checker**
 
    ```bash
-   poetry run typecheck
+   poetry run mypy phzipcodes
    ```
 
 8. **To update the zip codes data, run the scraper**
