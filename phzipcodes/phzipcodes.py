@@ -31,8 +31,9 @@ def load_data() -> dict[str, ZipCode]:
     Returns:
         dict[str, ZipCode]: A dictionary mapping zip codes to ZipCode objects.
     """
-    with DATA_FILE_PATH.open() as f:
+    with DATA_FILE_PATH.open(encoding="utf-8") as f:
         raw_data = json.load(f)
+
     return {
         code: ZipCode(
             code=code,
