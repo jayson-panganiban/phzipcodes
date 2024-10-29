@@ -11,17 +11,17 @@ from phzipcodes import (
 
 @pytest.fixture
 def valid_zip_code():
-    return "1000"
+    return "4114"
 
 
 @pytest.fixture
 def valid_region():
-    return "NCR (National Capital Region)"
+    return "Region 4A (CALABARZON)"
 
 
 @pytest.fixture
 def valid_province():
-    return "Metro Manila"
+    return "Cavite"
 
 
 class TestGetByZip:
@@ -29,9 +29,9 @@ class TestGetByZip:
         zip_code = get_by_zip(valid_zip_code)
         assert zip_code is not None
         assert zip_code.code == valid_zip_code
-        assert zip_code.city_municipality == "Ermita"
-        assert zip_code.province == "Metro Manila"
-        assert zip_code.region == "NCR (National Capital Region)"
+        assert zip_code.city_municipality == "Dasmariñas"
+        assert zip_code.province == "Cavite"
+        assert zip_code.region == "Region 4A (CALABARZON)"
 
     def test_nonexistent_zip(self):
         assert get_by_zip("99999") is None
@@ -41,9 +41,9 @@ class TestSearch:
     @pytest.mark.parametrize(
         "query, expected_substring",
         [
-            ("Manila", "Manila"),
-            ("manila", "Manila"),
-            ("MANILA", "Manila"),
+            ("Dasmariñas", "Dasmariñas"),
+            ("dasmariñas", "Dasmariñas"),
+            ("DASMARIÑAS", "Dasmariñas"),
         ],
     )
     def test_basic_search(self, query, expected_substring):
@@ -63,7 +63,7 @@ class TestSearch:
     @pytest.mark.parametrize(
         "query, match_type, expected_field, expected_value",
         [
-            ("Ermita", "exact", "city_municipality", "Ermita"),
+            ("Dasmariñas", "exact", "city_municipality", "Dasmariñas"),
             ("Maka", "contains", "city_municipality", "Maka"),
             ("San", "startswith", "city_municipality", "San"),
         ],
@@ -82,11 +82,9 @@ class TestSearch:
         assert all(result.province == "Pangasinan" for result in results)
 
     def test_search_with_region(self):
-        results = search("NCR", fields=("region",))
+        results = search("Region 4A (CALABARZON)", fields=("region",))
         assert results
-        assert all(
-            result.region == "NCR (National Capital Region)" for result in results
-        )
+        assert all(result.region == "Region 4A (CALABARZON)" for result in results)
 
     def test_nonexistent_place(self):
         assert not search("NonexistentPlace")
@@ -102,18 +100,18 @@ class TestSearch:
 def test_get_regions():
     regions = get_regions()
     assert regions
-    assert "NCR (National Capital Region)" in regions
+    assert "Region 4A (CALABARZON)" in regions
 
 
 def test_get_provinces(valid_region):
     provinces = get_provinces(valid_region)
-    assert "Metro Manila" in provinces
+    assert "Cavite" in provinces
 
 
 def test_get_cities_municipalities(valid_province):
     cities_municipalities = get_cities_municipalities(valid_province)
-    assert "Ermita" in cities_municipalities
-    assert "Makati CPO (Inc, Buendia Up To)" in cities_municipalities
+    assert "Dasmariñas Resettlement Area" in cities_municipalities
+    assert "Gen. Mariano Alvarez" in cities_municipalities
 
 
 def test_nonexistent_region():
