@@ -1,7 +1,9 @@
-"""Philippines zip codes package.
+"""
+Philippines zip codes package.
 
 This package provides functionality to work with Philippines zip codes,
-including searching, retrieving information, and listing regions, provinces, and cities.
+including searching, retrieving information, and listing regions,
+provinces, and cities/municipalities.
 """
 
 from .phzipcodes import (
@@ -22,4 +24,4 @@ __all__ = [
     "get_cities_municipalities",
 ]
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
