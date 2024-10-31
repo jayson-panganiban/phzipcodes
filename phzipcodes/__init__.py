@@ -8,7 +8,8 @@ provinces, and cities/municipalities.
 
 from .phzipcodes import (
     ZipCode,
-    get_by_zip,
+    find_by_city_municipality,
+    find_by_zip,
     get_cities_municipalities,
     get_provinces,
     get_regions,
@@ -17,11 +18,12 @@ from .phzipcodes import (
 
 __all__ = [
     "ZipCode",
-    "get_by_zip",
+    "find_by_zip",
+    "find_by_city_municipality",
     "search",
     "get_regions",
     "get_provinces",
     "get_cities_municipalities",
 ]
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
