@@ -18,9 +18,14 @@ pip install phzipcodes
 import phzipcodes
 
 # Get zip code information by zip code
-zip_info = phzipcodes.get_by_zip("1000")
+zip_info = phzipcodes.find_by_zip("4117")
 print(zip_info)
-# Output: ZipCode(code='1000', city_municipality='Manila', province='Metro Manila', region='NCR')
+# Output: ZipCode(code='4117', city_municipality='Gen. Mariano Alvarez', province='Cavite', region='Region 4A (CALABARZON)')
+
+# Get location details by city/municipality
+location_details = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
+print(location_details)
+# Output: [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
 
 # Search for zip codes
 results = phzipcodes.search("Manila")
@@ -28,28 +33,43 @@ for result in results:
     print(result)
 
 # Advanced search options
-results = phzipcodes.search("Manila", fields=("city_municipality",), match_type="exact")
-print([result.code for result in results])
-# Output: ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008']
+results = phzipcodes.search("Dasmariñas", fields=("city_municipality",), match_type="exact")
+print(results)
+# Output: (ZipCode(code='4114', city_municipality='Dasmariñas', province='Cavite', region='Region 4A (CALABARZON)'),)
 
 # Get all unique regions
 regions = phzipcodes.get_regions()
-print(regions[:3])
-# Output: ['NCR', 'CAR', 'Region I']
+print(regions[:2])
+# Output: ['CAR (Cordillera Administrative Region)', 'NCR (National Capital Region)']
 
 # Get all provinces in a specific region
-provinces = phzipcodes.get_provinces("NCR")
-print(provinces)
-# Output: ['Metro Manila']
+provinces = phzipcodes.get_provinces("Region 4A (CALABARZON))
+print(provinces[:2])
+# Output: ['Batangas', 'Cavite']
 
 # Get all cities/municipalities in a specific province
-cities = phzipcodes.get_cities_municipalities("Metro Manila")
-print(cities[:3])
-# Output: ['Manila', 'Quezon City', 'Caloocan']
-
+cities_municipalities = phzipcodes.get_cities_municipalities("Cavite)
+print(cities_municipalities[:2])
+# Output: ['Alfonso', 'Amadeo']
 ```
 
 ## API Reference
+
+### `find_by_zip(zip_code: str) -> ZipCode | None`
+
+Retrieve zip code information by zip code.
+
+- **Parameters:**
+  - `zip_code`: str - The zip code to look up
+- **Returns:** ZipCode | None - ZipCode object if found, None otherwise
+
+### `find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]`
+
+Get zip codes, province and region by city/municipality name.
+
+- **Parameters:**
+  - `city_municipality`: str - Name of the city/municipality to look up
+- **Returns**: list[dict[str, str]] - List of dictionaries containing zip_code, province and region
 
 ### `search(query: str, fields: tuple[str, ...] = DEFAULT_SEARCH_FIELDS, match_type: str = "contains") -> tuple[ZipCode, ...]`
 
@@ -60,14 +80,6 @@ Search for zip codes based on query and criteria.
   - `fields`: tuple[str, ...] (optional) - Fields to search in (default: city, province, region)
   - `match_type`: str (optional) - Type of match to perform (default: "contains")
 - **Returns:** tuple[ZipCode, ...] - Tuple of matching ZipCode objects
-
-### `get_by_zip(zip_code: str) -> ZipCode | None`
-
-Retrieve zip code information by zip code.
-
-- **Parameters:**
-  - `zip_code`: str - The zip code to look up
-- **Returns:** ZipCode | None - ZipCode object if found, None otherwise
 
 ### `get_regions() -> list[str]`
 
