@@ -1,7 +1,7 @@
 import json
 from functools import lru_cache
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Sequence
 
 from cachetools import TTLCache, cached
 from pydantic import BaseModel
@@ -9,9 +9,7 @@ from pydantic import BaseModel
 # Constants
 DATA_FILE_PATH = Path(__file__).parent / "data" / "ph_zip_codes.json"
 DEFAULT_SEARCH_FIELDS = ("city_municipality", "province", "region")
-
-# Cache configuration
-cache: TTLCache = TTLCache(maxsize=1000, ttl=3600)  # Cache up to 1000 items for 1 hour
+CACHE: TTLCache = TTLCache(maxsize=1000, ttl=3600)  # Cache up to 1000 items for 1 hour
 
 
 class ZipCode(BaseModel):
@@ -23,6 +21,7 @@ class ZipCode(BaseModel):
     region: str
 
 
+# Core/primitive functions
 @lru_cache(maxsize=1)
 def load_data() -> dict[str, ZipCode]:
     """
@@ -48,15 +47,9 @@ def load_data() -> dict[str, ZipCode]:
     }
 
 
-@cached(cache)
-def get_by_zip(zip_code: str) -> ZipCode | None:
-    """Retrieve zip code information by code. Returns None if not found."""
-    return load_data().get(zip_code)
-
-
 def get_match_function(match_type: str) -> Callable[[str, str], bool]:
     """
-    Return a match function based on type.
+    Get appropriate string matching function based on match type.
 
     Args:
         match_type: The type of match to perform ('contains', 'startswith', or 'exact').
@@ -64,17 +57,53 @@ def get_match_function(match_type: str) -> Callable[[str, str], bool]:
     Returns:
         Callable[[str, str], bool]: takes two strings and returns a boolean.
     """
-    return {
+    matchers = {
         "contains": lambda field, q: q in field.lower(),
         "startswith": lambda field, q: field.lower().startswith(q),
         "exact": lambda field, q: field.lower() == q,
-    }.get(match_type, lambda field, q: q in field.lower())
+    }
+
+    return matchers.get(match_type, matchers["contains"])
 
 
-@cached(cache)
+@cached(CACHE)
+def get_unique_values(field: str) -> list[str]:
+    """Get unique values for a given field across all zip codes."""
+    return sorted(
+        {
+            value
+            for value in (getattr(zip_code, field) for zip_code in load_data().values())
+            if value
+        }
+    )
+
+
+# Derived lookup functions
+@cached(CACHE)
+def find_by_zip(zip_code: str) -> ZipCode | None:
+    """Get location information by zip code."""
+    return load_data().get(zip_code)
+
+
+@cached(CACHE)
+def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
+    """Get zip codes, province and region by city/municipality name."""
+    return [
+        {
+            "zip_code": zip_code.code,
+            "province": zip_code.province,
+            "region": zip_code.region,
+        }
+        for zip_code in load_data().values()
+        if zip_code.city_municipality.lower() == city_municipality.lower()
+    ]
+
+
+# Search and filter functions
+@cached(CACHE)
 def search(
     query: str,
-    fields: tuple[str, ...] = DEFAULT_SEARCH_FIELDS,
+    fields: Sequence[str] = DEFAULT_SEARCH_FIELDS,
     match_type: str = "contains",
 ) -> tuple[ZipCode, ...]:
     """
@@ -91,45 +120,28 @@ def search(
         >>> [result.code for result in results]
         ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008']
     """
-    lowered_query = query.lower()
+    query = query.lower()
     match_func = get_match_function(match_type)
+
     return tuple(
         zip_code
         for zip_code in load_data().values()
-        if any(match_func(getattr(zip_code, field), lowered_query) for field in fields)
+        if any(match_func(getattr(zip_code, field), query) for field in fields)
     )
 
 
-@cached(cache)
-def get_unique_values(attribute: str) -> list[str]:
-    """
-    Get unique values for a given attribute across all zip codes.
-
-    Args:
-        attribute: The attribute to get unique values for.
-
-    Returns:
-        list[str]: A list of unique values for the given attribute.
-
-    Example:
-        >>> regions = get_unique_values("region")
-        >>> print(regions[:3])
-        ['NCR', 'CAR', 'Region I']
-    """
-    return list({getattr(zip_code, attribute) for zip_code in load_data().values()})
-
-
+# Getter functions for hierarchical data
 def get_regions() -> list[str]:
     """
-    Retrieve all unique regions in the Philippines.
+    Get all unique regions in the Philippines.
 
     Returns:
         list[str]: A list of all unique regions.
 
     Example:
         >>> regions = get_regions()
-        >>> print(regions[1:3])
-        ['Region 1 (Ilocos Region)', 'Region 8 (Eastern Visayas)']
+        >>> print(regions[:2])
+        ['CAR (Cordillera Administrative Region)', 'NCR (National Capital Region)']
     """
     return get_unique_values("region")
 
@@ -145,11 +157,11 @@ def get_provinces(region: str) -> list[str]:
         list[str]: A list of provinces in the specified region.
 
     Example:
-        >>> provinces = get_provinces("NCR (National Capital Region)")
-        >>> print(provinces)
-        ['Metro Manila']
+        >>> provinces = get_provinces("Region 4A (CALABARZON)")
+        >>> print(provinces[:2])
+        ['Batangas', 'Cavite']
     """
-    return list(
+    return sorted(
         {
             zip_code.province
             for zip_code in load_data().values()
@@ -160,7 +172,7 @@ def get_provinces(region: str) -> list[str]:
 
 def get_cities_municipalities(province: str) -> list[str]:
     """
-    Retrieve all cities/municipalities within a specific province.
+    Get all cities and municipalities within a specific province.
 
     Args:
         province: The province to get cities/municipalities for.
@@ -169,11 +181,11 @@ def get_cities_municipalities(province: str) -> list[str]:
         list[str]: A list of cities/municipalities in the specified province.
 
     Example:
-        >>> cities = get_cities_municipalities("Metro Manila")
-        >>> print(cities[:3])
-        ['Rembo (West)', 'Gatchalian Subdivision', 'Guadalupe Viejo (Inc. Palm Vil)']
+        >>> cities_municipalities = get_cities_municipalities("Cavite")
+        >>> print(cities_municipalities[:2])
+        ['Alfonso', 'Amadeo']
     """
-    return list(
+    return sorted(
         {
             zip_code.city_municipality
             for zip_code in load_data().values()
