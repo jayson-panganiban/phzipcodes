@@ -1,7 +1,8 @@
 import pytest
 
 from phzipcodes import (
-    get_by_zip,
+    find_by_city_municipality,
+    find_by_zip,
     get_cities_municipalities,
     get_provinces,
     get_regions,
@@ -24,9 +25,14 @@ def valid_province():
     return "Cavite"
 
 
-class TestGetByZip:
+@pytest.fixture
+def valid_city_municipality():
+    return "Dasmariñas"
+
+
+class TestFindByZip:
     def test_valid_zip(self, valid_zip_code):
-        zip_code = get_by_zip(valid_zip_code)
+        zip_code = find_by_zip(valid_zip_code)
         assert zip_code is not None
         assert zip_code.code == valid_zip_code
         assert zip_code.city_municipality == "Dasmariñas"
@@ -34,7 +40,29 @@ class TestGetByZip:
         assert zip_code.region == "Region 4A (CALABARZON)"
 
     def test_nonexistent_zip(self):
-        assert get_by_zip("99999") is None
+        assert find_by_zip("99999") is None
+
+
+class TestFindByCityMunicipality:
+    def test_valid_city_municipality(self, valid_city_municipality):
+        results = find_by_city_municipality(valid_city_municipality)
+        assert results
+        assert all(
+            isinstance(result, dict)
+            and "zip_code" in result
+            and "province" in result
+            and "region" in result
+            for result in results
+        )
+        expected = {
+            "zip_code": "4114",
+            "province": "Cavite",
+            "region": "Region 4A (CALABARZON)",
+        }
+        assert expected in results
+
+    def test_nonexistent_city_municipality(self):
+        assert not find_by_city_municipality("NonexistentPlace")
 
 
 class TestSearch:
