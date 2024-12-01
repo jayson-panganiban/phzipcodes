@@ -1,15 +1,22 @@
 import json
+from enum import Enum
 from functools import lru_cache
 from pathlib import Path
-from typing import Callable, Sequence
+from typing import Callable, Final, Sequence
 
 from cachetools import TTLCache, cached
 from pydantic import BaseModel
 
 # Constants
-DATA_FILE_PATH = Path(__file__).parent / "data" / "ph_zip_codes.json"
-DEFAULT_SEARCH_FIELDS = ("city_municipality", "province", "region")
-CACHE: TTLCache = TTLCache(maxsize=1000, ttl=3600)  # Cache up to 1000 items for 1 hour
+DATA_FILE_PATH: Final = Path(__file__).parent / "data" / "ph_zip_codes.json"
+DEFAULT_SEARCH_FIELDS: Final = ("city_municipality", "province", "region")
+CACHE: TTLCache = TTLCache(maxsize=1000, ttl=3600)
+
+
+class MatchType(str, Enum):
+    CONTAINS = "contains"
+    STARTSWITH = "startswith"
+    EXACT = "exact"
 
 
 class ZipCode(BaseModel):
@@ -48,46 +55,44 @@ def load_data() -> dict[str, ZipCode]:
 
 
 def get_match_function(match_type: str) -> Callable[[str, str], bool]:
-    """
-    Get appropriate string matching function based on match type.
-
-    Args:
-        match_type: The type of match to perform ('contains', 'startswith', or 'exact').
-
-    Returns:
-        Callable[[str, str], bool]: takes two strings and returns a boolean.
-    """
+    """Get appropriate string matching function based on match type."""
     matchers = {
-        "contains": lambda field, q: q in field.lower(),
-        "startswith": lambda field, q: field.lower().startswith(q),
-        "exact": lambda field, q: field.lower() == q,
+        MatchType.CONTAINS: lambda field, q: q in field.lower(),
+        MatchType.STARTSWITH: lambda field, q: field.lower().startswith(q),
+        MatchType.EXACT: lambda field, q: field.lower() == q,
     }
 
-    return matchers.get(match_type, matchers["contains"])
-
-
-@cached(CACHE)
-def get_unique_values(field: str) -> list[str]:
-    """Get unique values for a given field across all zip codes."""
-    return sorted(
-        {
-            value
-            for value in (getattr(zip_code, field) for zip_code in load_data().values())
-            if value
-        }
-    )
+    try:
+        return matchers[MatchType(match_type)]
+    except KeyError:
+        raise ValueError(f"Invalid match type: {match_type}")
 
 
 # Derived lookup functions
 @cached(CACHE)
 def find_by_zip(zip_code: str) -> ZipCode | None:
-    """Get location information by zip code."""
+    """Get location information by zip code.
+
+    Args:
+        zip_code (str): zip code.
+
+    Returns:
+        ZipCode | None: ZipCode object if found, None otherwise.
+    """
     return load_data().get(zip_code)
 
 
 @cached(CACHE)
 def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
-    """Get zip codes, province and region by city/municipality name."""
+    """
+    Get zip codes, province and region by city/municipality name.
+
+    Args:
+        city_municipality (str): city or municipality name.
+
+    Returns:
+        list[dict[str, str]]: List of dictionaries with zip code, province, and region.
+    """
     return [
         {
             "zip_code": zip_code.code,
@@ -99,26 +104,22 @@ def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
     ]
 
 
-# Search and filter functions
 @cached(CACHE)
 def search(
     query: str,
     fields: Sequence[str] = DEFAULT_SEARCH_FIELDS,
-    match_type: str = "contains",
+    match_type: str = MatchType.CONTAINS,
 ) -> tuple[ZipCode, ...]:
     """
     Search for zip codes based on query and criteria.
 
     Args:
-        query: Search term
-        fields: Fields to search in (default: city, province, region)
-        match_type: Type of match to perform (default: contains)
+        query (str): Search term.
+        fields (Sequence[str], optional): Defaults to DEFAULT_SEARCH_FIELDS.
+        match_type (str, optional):  Defaults to MatchType.CONTAINS.
 
-    Example:
-        >>> results = search("Manila", fields=("city_municipality",),
-        ...                  match_type="exact")
-        >>> [result.code for result in results]
-        ['1000', '1001', '1002', '1003', '1004', '1005', '1006', '1007', '1008']
+    Returns:
+        tuple[ZipCode, ...]: A tuple of ZipCode objects matching the query.
     """
     query = query.lower()
     match_func = get_match_function(match_type)
@@ -130,36 +131,29 @@ def search(
     )
 
 
-# Getter functions for hierarchical data
+@cached(CACHE)
 def get_regions() -> list[str]:
     """
     Get all unique regions in the Philippines.
 
     Returns:
         list[str]: A list of all unique regions.
-
-    Example:
-        >>> regions = get_regions()
-        >>> print(regions[:2])
-        ['CAR (Cordillera Administrative Region)', 'NCR (National Capital Region)']
     """
-    return get_unique_values("region")
+    return sorted(
+        {zip_code.region for zip_code in load_data().values() if zip_code.region}
+    )
 
 
+@cached(CACHE)
 def get_provinces(region: str) -> list[str]:
     """
     Get all provinces within a specific region.
 
     Args:
-        region: The region to get provinces for.
+        region (str): Region to get provinces for.
 
     Returns:
         list[str]: A list of provinces in the specified region.
-
-    Example:
-        >>> provinces = get_provinces("Region 4A (CALABARZON)")
-        >>> print(provinces[:2])
-        ['Batangas', 'Cavite']
     """
     return sorted(
         {
@@ -170,20 +164,16 @@ def get_provinces(region: str) -> list[str]:
     )
 
 
+@cached(CACHE)
 def get_cities_municipalities(province: str) -> list[str]:
     """
     Get all cities and municipalities within a specific province.
 
     Args:
-        province: The province to get cities/municipalities for.
+        province (str): Province to get cities/municipalities for.
 
     Returns:
         list[str]: A list of cities/municipalities in the specified province.
-
-    Example:
-        >>> cities_municipalities = get_cities_municipalities("Cavite")
-        >>> print(cities_municipalities[:2])
-        ['Alfonso', 'Amadeo']
     """
     return sorted(
         {
