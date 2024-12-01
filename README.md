@@ -4,7 +4,7 @@ Philippines zip codes package
 
 ## Installation
 
-Ensure you have Python 3.9 or higher installed.
+Ensure you have Python 3.11 or higher installed.
 
 Install the package using pip:
 
@@ -27,28 +27,32 @@ location_details = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
 print(location_details)
 # Output: [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
 
-# Search for zip codes
+# Basic search for zip codes
 results = phzipcodes.search("Manila")
 for result in results:
     print(result)
 
-# Advanced search options
-results = phzipcodes.search("Dasmariñas", fields=("city_municipality",), match_type="exact")
+# Advanced search with specific field and exact matching
+results = phzipcodes.search(
+    "Dasmariñas", 
+    fields=["city_municipality"], 
+    match_type="exact"
+)
 print(results)
 # Output: (ZipCode(code='4114', city_municipality='Dasmariñas', province='Cavite', region='Region 4A (CALABARZON)'),)
 
-# Get all unique regions
+# Get all unique regions in the Philippines
 regions = phzipcodes.get_regions()
 print(regions[:2])
 # Output: ['CAR (Cordillera Administrative Region)', 'NCR (National Capital Region)']
 
 # Get all provinces in a specific region
-provinces = phzipcodes.get_provinces("Region 4A (CALABARZON))
+provinces = phzipcodes.get_provinces("Region 4A (CALABARZON)")
 print(provinces[:2])
 # Output: ['Batangas', 'Cavite']
 
 # Get all cities/municipalities in a specific province
-cities_municipalities = phzipcodes.get_cities_municipalities("Cavite)
+cities_municipalities = phzipcodes.get_cities_municipalities("Cavite")
 print(cities_municipalities[:2])
 # Output: ['Alfonso', 'Amadeo']
 ```
@@ -57,7 +61,7 @@ print(cities_municipalities[:2])
 
 ### `find_by_zip(zip_code: str) -> ZipCode | None`
 
-Retrieve zip code information by zip code.
+Get location information by zip code.
 
 - **Parameters:**
   - `zip_code`: str - The zip code to look up
@@ -71,37 +75,38 @@ Get zip codes, province and region by city/municipality name.
   - `city_municipality`: str - Name of the city/municipality to look up
 - **Returns**: list[dict[str, str]] - List of dictionaries containing zip_code, province and region
 
-### `search(query: str, fields: tuple[str, ...] = DEFAULT_SEARCH_FIELDS, match_type: str = "contains") -> tuple[ZipCode, ...]`
+### `search(query: str, fields: Sequence[str] = DEFAULT_SEARCH_FIELDS, match_type: str = MatchType.CONTAINS) -> tuple[ZipCode, ...]`
 
 Search for zip codes based on query and criteria.
 
 - **Parameters:**
   - `query`: str - The search query
-  - `fields`: tuple[str, ...] (optional) - Fields to search in (default: city, province, region)
+  - `fields`: Sequence[str] (optional) - Fields to search in (default: city_municipality, province, region)
   - `match_type`: str (optional) - Type of match to perform (default: "contains")
 - **Returns:** tuple[ZipCode, ...] - Tuple of matching ZipCode objects
 
 ### `get_regions() -> list[str]`
 
-Get all unique regions.
+Get all unique regions in the Philippines.
 
-- **Returns:** list[str] - List of all unique regions
+- **Returns:** list[str] - A list of all unique regions
 
-### `get_provinces(region: str) -> List[str]`
+### `get_provinces(region: str) -> list[str]`
 
-Get all provinces in a specific region.
-
-- **Parameters:**
-  - `region`: str - The region to get provinces for
-- **Returns:** list[str] - List of provinces in the specified region
-
-### `get_cities_municipalities(province: str) -> List[str]`
-
-Get all cities/municipalities in a specific province.
+Get all provinces within a specific region.
 
 - **Parameters:**
-  - `province`: str - The province to get cities for
-- **Returns:** list[str] - List of cities/municipalities in the specified province
+  - `region`: str - Region to get provinces for
+- **Returns:** list[str] - A list of provinces in the specified region
+
+### `get_cities_municipalities(province: str) -> list[str]`
+
+Get all cities and municipalities within a specific province.
+
+- **Parameters:**
+  - `province`: str - Province to get cities/municipalities for
+- **Returns:** list[str] - A list of cities/municipalities in the specified province
+
 
 ## Data Structure
 
