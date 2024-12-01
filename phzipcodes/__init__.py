@@ -26,4 +26,4 @@ __all__ = [
     "get_cities_municipalities",
 ]
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
