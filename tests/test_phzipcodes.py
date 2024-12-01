@@ -122,7 +122,8 @@ class TestSearch:
             search("Test", fields=("invalid_field",))
 
     def test_invalid_match_type(self):
-        assert not search("Test", match_type="invalid_type")
+        with pytest.raises(ValueError):
+            search("Test", match_type="invalid_match_type")
 
 
 def test_get_regions():
