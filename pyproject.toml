@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phzipcodes"
-version = "0.1.5"
+version = "0.1.6"
 description = "A Python package for Philippines zip codes"
 authors = ["Jayson <jsoncp@proton.me>"]
 license = "MIT"

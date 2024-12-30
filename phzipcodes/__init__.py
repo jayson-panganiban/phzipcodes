@@ -48,5 +48,3 @@ __all__ = [
     "get_match_function",
     "load_data",
 ]
-
-__version__ = "0.1.5"
