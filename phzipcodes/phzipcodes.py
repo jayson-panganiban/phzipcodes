@@ -29,8 +29,6 @@ class MatchType(str, Enum):
 
 
 class ZipCode(BaseModel):
-    """Represents a zip code entry with associated location information."""
-
     code: str
     city_municipality: str
     province: str
@@ -40,6 +38,7 @@ class ZipCode(BaseModel):
 # Type aliases
 ZipResult: TypeAlias = ZipCode | None
 SearchResults: TypeAlias = tuple[ZipCode, ...]
+CityMunicipalityResults: TypeAlias = list[dict[str, str]]
 Cities: TypeAlias = list[str]
 Regions: TypeAlias = list[str]
 Provinces: TypeAlias = list[str]
@@ -50,7 +49,6 @@ MatchFunction: TypeAlias = Callable[[str, str], bool]
 def load_data() -> dict[str, ZipCode]:
     """
     Load and cache zip code data from JSON file.
-
     Returns:
         dict[str, ZipCode]: A dictionary mapping zip codes to ZipCode objects.
     """
@@ -82,27 +80,23 @@ def get_match_function(match_type: str | MatchType) -> MatchFunction:
     match_type_enum = (
         MatchType(match_type) if isinstance(match_type, str) else match_type
     )
-    if match_type_enum not in matchers:
-        raise ValueError(f"Invalid match type: {match_type}")
-
     return matchers[match_type_enum]
 
 
 @cached(CACHE)
 def find_by_zip(zip_code: str) -> ZipResult:
-    """Get location information by zip code.
-
+    """
+    Get location information by zip code.
     Args:
         zip_code (str): zip code.
-
     Returns:
-        ZipCode | None: ZipCode object if found, None otherwise.
+        ZipResult: ZipCode object or None if not found.
     """
     return load_data().get(zip_code)
 
 
 @cached(CACHE)
-def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
+def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults:
     """
     Get zip codes, province and region by city/municipality name.
 
@@ -110,7 +104,7 @@ def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
         city_municipality (str): city or municipality name.
 
     Returns:
-        list[dict[str, str]]: List of dictionaries with zip code, province, and region.
+        CityMunicipalityResults: List of dictionaries with zip code, province, and region.
     """
     return [
         {
@@ -131,14 +125,12 @@ def search(
 ) -> SearchResults:
     """
     Search for zip codes based on query and criteria.
-
     Args:
         query (str): Search term.
         fields (Sequence[str], optional): Defaults to DEFAULT_SEARCH_FIELDS.
         match_type (str, optional):  Defaults to MatchType.CONTAINS.
-
     Returns:
-        tuple[ZipCode, ...]: A tuple of ZipCode objects matching the query.
+        SearchResults: A tuple of ZipCode objects matching the query.
     """
     query = query.lower()
     match_func = get_match_function(match_type)
@@ -154,9 +146,8 @@ def search(
 def get_regions() -> Regions:
     """
     Get all unique regions in the Philippines.
-
     Returns:
-        list[str]: A list of all unique regions.
+        Regions: A list of unique regions.
     """
     return sorted(
         {zip_code.region for zip_code in load_data().values() if zip_code.region}
@@ -167,12 +158,10 @@ def get_regions() -> Regions:
 def get_provinces(region: str) -> Provinces:
     """
     Get all provinces within a specific region.
-
     Args:
         region (str): Region to get provinces for.
-
     Returns:
-        list[str]: A list of provinces in the specified region.
+        Provinces: A list of provinces in the specified region.
     """
     return sorted(
         {
@@ -187,12 +176,10 @@ def get_provinces(region: str) -> Provinces:
 def get_cities_municipalities(province: str) -> Cities:
     """
     Get all cities and municipalities within a specific province.
-
     Args:
         province (str): Province to get cities/municipalities for.
-
     Returns:
-        list[str]: A list of cities/municipalities in the specified province.
+        Cities: A list of cities and municipalities in the specified province.
     """
     return sorted(
         {
