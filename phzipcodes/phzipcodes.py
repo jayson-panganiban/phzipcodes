@@ -1,16 +1,25 @@
+"""
+Philippines zip codes package.
+
+This package provides functionality to work with Philippines zip codes,
+including searching, retrieving information, and listing regions,
+provinces, and cities/municipalities.
+"""
+
 import json
+from collections.abc import Callable, Sequence
 from enum import Enum
 from functools import lru_cache
 from pathlib import Path
-from typing import Callable, Final, Sequence
+from typing import Final, TypeAlias
 
 from cachetools import TTLCache, cached
 from pydantic import BaseModel
 
-# Constants
+# Constants Configuration
 DATA_FILE_PATH: Final = Path(__file__).parent / "data" / "ph_zip_codes.json"
 DEFAULT_SEARCH_FIELDS: Final = ("city_municipality", "province", "region")
-CACHE: TTLCache = TTLCache(maxsize=1000, ttl=3600)
+CACHE: TTLCache = TTLCache(maxsize=1000, ttl=float("inf"))
 
 
 class MatchType(str, Enum):
@@ -28,7 +37,15 @@ class ZipCode(BaseModel):
     region: str
 
 
-# Core/primitive functions
+# Type aliases
+ZipResult: TypeAlias = ZipCode | None
+SearchResults: TypeAlias = tuple[ZipCode, ...]
+Cities: TypeAlias = list[str]
+Regions: TypeAlias = list[str]
+Provinces: TypeAlias = list[str]
+MatchFunction: TypeAlias = Callable[[str, str], bool]
+
+
 @lru_cache(maxsize=1)
 def load_data() -> dict[str, ZipCode]:
     """
@@ -54,23 +71,25 @@ def load_data() -> dict[str, ZipCode]:
     }
 
 
-def get_match_function(match_type: str) -> Callable[[str, str], bool]:
+def get_match_function(match_type: str | MatchType) -> MatchFunction:
     """Get appropriate string matching function based on match type."""
-    matchers = {
+    matchers: dict[MatchType, MatchFunction] = {
         MatchType.CONTAINS: lambda field, q: q in field.lower(),
         MatchType.STARTSWITH: lambda field, q: field.lower().startswith(q),
         MatchType.EXACT: lambda field, q: field.lower() == q,
     }
 
-    try:
-        return matchers[MatchType(match_type)]
-    except KeyError:
+    match_type_enum = (
+        MatchType(match_type) if isinstance(match_type, str) else match_type
+    )
+    if match_type_enum not in matchers:
         raise ValueError(f"Invalid match type: {match_type}")
 
+    return matchers[match_type_enum]
 
-# Derived lookup functions
+
 @cached(CACHE)
-def find_by_zip(zip_code: str) -> ZipCode | None:
+def find_by_zip(zip_code: str) -> ZipResult:
     """Get location information by zip code.
 
     Args:
@@ -108,8 +127,8 @@ def find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]:
 def search(
     query: str,
     fields: Sequence[str] = DEFAULT_SEARCH_FIELDS,
-    match_type: str = MatchType.CONTAINS,
-) -> tuple[ZipCode, ...]:
+    match_type: str | MatchType = MatchType.CONTAINS,
+) -> SearchResults:
     """
     Search for zip codes based on query and criteria.
 
@@ -132,7 +151,7 @@ def search(
 
 
 @cached(CACHE)
-def get_regions() -> list[str]:
+def get_regions() -> Regions:
     """
     Get all unique regions in the Philippines.
 
@@ -145,7 +164,7 @@ def get_regions() -> list[str]:
 
 
 @cached(CACHE)
-def get_provinces(region: str) -> list[str]:
+def get_provinces(region: str) -> Provinces:
     """
     Get all provinces within a specific region.
 
@@ -165,7 +184,7 @@ def get_provinces(region: str) -> list[str]:
 
 
 @cached(CACHE)
-def get_cities_municipalities(province: str) -> list[str]:
+def get_cities_municipalities(province: str) -> Cities:
     """
     Get all cities and municipalities within a specific province.
 
