@@ -17,7 +17,7 @@ pip install phzipcodes
 ```python
 import phzipcodes
 
-# Get zip code information by zip code
+# Get zip code information
 zip_info = phzipcodes.find_by_zip("4117")
 print(zip_info)
 # Output: ZipCode(code='4117', city_municipality='Gen. Mariano Alvarez', province='Cavite', region='Region 4A (CALABARZON)')
@@ -27,91 +27,38 @@ location_details = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
 print(location_details)
 # Output: [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
 
-# Basic search for zip codes
-results = phzipcodes.search("Manila")
+# Search with specific match type
+results = phzipcodes.search("Manila", match_type=phzipcodes.MatchType.CONTAINS)
 for result in results:
     print(result)
 
-# Advanced search with specific field and exact matching
+# Search with custom fields and exact matching
 results = phzipcodes.search(
     "Dasmariñas", 
     fields=["city_municipality"], 
-    match_type="exact"
+    match_type=phzipcodes.MatchType.EXACT
 )
 print(results)
-# Output: (ZipCode(code='4114', city_municipality='Dasmariñas', province='Cavite', region='Region 4A (CALABARZON)'),)
 
-# Get all unique regions in the Philippines
+# Get geographic data
 regions = phzipcodes.get_regions()
-print(regions[:2])
-# Output: ['CAR (Cordillera Administrative Region)', 'NCR (National Capital Region)']
-
-# Get all provinces in a specific region
 provinces = phzipcodes.get_provinces("Region 4A (CALABARZON)")
-print(provinces[:2])
-# Output: ['Batangas', 'Cavite']
+cities = phzipcodes.get_cities_municipalities("Cavite")
 
-# Get all cities/municipalities in a specific province
-cities_municipalities = phzipcodes.get_cities_municipalities("Cavite")
-print(cities_municipalities[:2])
-# Output: ['Alfonso', 'Amadeo']
 ```
 
 ## API Reference
 
-### `find_by_zip(zip_code: str) -> ZipCode | None`
+### Types
 
-Get location information by zip code.
-
-- **Parameters:**
-  - `zip_code`: str - The zip code to look up
-- **Returns:** ZipCode | None - ZipCode object if found, None otherwise
-
-### `find_by_city_municipality(city_municipality: str) -> list[dict[str, str]]`
-
-Get zip codes, province and region by city/municipality name.
-
-- **Parameters:**
-  - `city_municipality`: str - Name of the city/municipality to look up
-- **Returns**: list[dict[str, str]] - List of dictionaries containing zip_code, province and region
-
-### `search(query: str, fields: Sequence[str] = DEFAULT_SEARCH_FIELDS, match_type: str = MatchType.CONTAINS) -> tuple[ZipCode, ...]`
-
-Search for zip codes based on query and criteria.
-
-- **Parameters:**
-  - `query`: str - The search query
-  - `fields`: Sequence[str] (optional) - Fields to search in (default: city_municipality, province, region)
-  - `match_type`: str (optional) - Type of match to perform (default: "contains")
-- **Returns:** tuple[ZipCode, ...] - Tuple of matching ZipCode objects
-
-### `get_regions() -> list[str]`
-
-Get all unique regions in the Philippines.
-
-- **Returns:** list[str] - A list of all unique regions
-
-### `get_provinces(region: str) -> list[str]`
-
-Get all provinces within a specific region.
-
-- **Parameters:**
-  - `region`: str - Region to get provinces for
-- **Returns:** list[str] - A list of provinces in the specified region
-
-### `get_cities_municipalities(province: str) -> list[str]`
-
-Get all cities and municipalities within a specific province.
-
-- **Parameters:**
-  - `province`: str - Province to get cities/municipalities for
-- **Returns:** list[str] - A list of cities/municipalities in the specified province
-
-
-## Data Structure
-
-The package uses a `ZipCode` class with the following attributes:
-
+#### `MatchType`
+```python
+class MatchType(str, Enum):
+    CONTAINS    # Match if query exists within field
+    STARTSWITH  # Match if field starts with query
+    EXACT       # Match if field equals query exactly
+```
+#### `ZipCode`
 ```python
 class ZipCode(BaseModel):
     code: str
@@ -119,6 +66,72 @@ class ZipCode(BaseModel):
     province: str
     region: str
 ```
+### Functions
+### `find_by_zip`
+```python
+def find_by_zip(zip_code: str) -> ZipResult
+```
+Get location information by zip code.
+- **Parameters:**
+  - `zip_code`: Zip code to search for.
+- **Returns:** 
+  - `ZipCode | None` - ZipCode object or None if not found.
+
+
+### `find_by_city_municipality`
+```python
+def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults
+```
+Get zip codes, province and region by city/municipality name.
+
+- **Parameters:**
+  - `city_municipality`: city or municipality name.
+- **Returns**: 
+  - `CityMunicipalityResults`: List of dictionaries with zip code, province, and region.
+
+### `search`
+```python
+def search(
+    query: str,
+    fields: Sequence[str] = DEFAULT_SEARCH_FIELDS,
+    match_type: MatchType = MatchType.CONTAINS
+) -> SearchResults
+```
+Search for zip codes based on query and criteria.
+- **Parameters:**
+  - `query`: Search term
+  - `fields`: Fields to search in (default: city_municipality, province, region)
+  - `match_type`: Type of match to perform (default: CONTAINS)
+- **Returns:** 
+  - `SearchResults`: A tuple of ZipCode objects matching the query.
+
+### `get_regions`
+```python
+def get_regions() -> Regions
+```
+Get all unique regions in the Philippines.
+- **Returns:** `Regions`: A list of unique regions.
+
+### `get_provinces`
+```python
+def get_provinces(region: str) -> Provinces
+```
+Get all provinces within a specific region.
+
+- **Parameters:**
+  - `region`: str - Region to get provinces for
+- **Returns:**
+  - `Provinces`: A list of provinces in the specified region
+
+### `get_cities_municipalities`
+```python
+def get_cities_municipalities(province: str) -> CitiesMunicipalities
+```
+Get all cities/municipalities within a specific province.
+- **Parameters:**
+  - `province`: str - Province to get cities/municipalities for
+- **Returns:**
+  - `CitiesMunicipalities`: A list of cities/municipalities in the specified province
 
 ## Data Source and Collection
 
