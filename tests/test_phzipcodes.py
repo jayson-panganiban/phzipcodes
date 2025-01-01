@@ -53,12 +53,16 @@ class TestSearchFunctionality:
     @pytest.mark.parametrize(
         "query,match_type,validator",
         [
-            ("Dasmariñas", MatchType.EXACT, lambda r, q: r.city_municipality == q),
+            (
+                "Dasmariñas",
+                MatchType.EXACT,
+                lambda r, q: r.city_municipality.lower() == q.lower(),
+            ),
             ("Sta.", MatchType.CONTAINS, lambda r, q: q in r.city_municipality),
             (
                 "San",
                 MatchType.STARTSWITH,
-                lambda r, q: r.city_municipality.startswith(q),
+                lambda r, q: r.city_municipality.lower().startswith(q.lower()),
             ),
         ],
     )
@@ -77,6 +81,12 @@ class TestSearchFunctionality:
         results = search("Cavite", fields=fields, match_type=MatchType.CONTAINS)
         assert results and all(isinstance(r, ZipCode) for r in results)
         assert any("Cavite" in r.province for r in results)
+
+    def test_search_caching(self) -> None:
+        query = "Mahatao"
+        first_results = search(query)
+        second_results = search(query)
+        assert first_results is second_results
 
 
 class TestGeographicData:
