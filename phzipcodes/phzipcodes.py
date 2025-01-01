@@ -14,12 +14,31 @@ from pathlib import Path
 from typing import Final, TypeAlias
 
 from cachetools import TTLCache, cached
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 # Constants Configuration
 DATA_FILE_PATH: Final = Path(__file__).parent / "data" / "ph_zip_codes.json"
 DEFAULT_SEARCH_FIELDS: Final = ("city_municipality", "province", "region")
-CACHE: TTLCache = TTLCache(maxsize=1000, ttl=float("inf"))
+
+# Cache Configuration
+CACHE_CONFIG = {
+    "zip_lookup": {
+        "maxsize": 2000,  # Common postal code lookups
+        "ttl": float("inf"),  # Static data rarely changes
+    },
+    "city_lookup": {
+        "maxsize": 500,  # Frequent city searches
+        "ttl": 604800,  # 7 days, for potential city name updates
+    },
+    "search": {
+        "maxsize": 1000,  # High volume search queries
+        "ttl": 3600,  # 1 hour for dynamic searches
+    },
+}
+
+ZIP_CACHE = TTLCache(**CACHE_CONFIG["zip_lookup"])
+CITY_CACHE = TTLCache(**CACHE_CONFIG["city_lookup"])
+SEARCH_CACHE = TTLCache(**CACHE_CONFIG["search"])
 
 
 class MatchType(str, Enum):
@@ -29,6 +48,8 @@ class MatchType(str, Enum):
 
 
 class ZipCode(BaseModel):
+    model_config = ConfigDict(frozen=True, slots=True)
+
     code: str
     city_municipality: str
     province: str
@@ -83,7 +104,7 @@ def get_match_function(match_type: str | MatchType) -> MatchFunction:
     return matchers[match_type_enum]
 
 
-@cached(CACHE)
+@cached(ZIP_CACHE)
 def find_by_zip(zip_code: str) -> ZipResult:
     """
     Get location information by zip code.
@@ -95,14 +116,12 @@ def find_by_zip(zip_code: str) -> ZipResult:
     return load_data().get(zip_code)
 
 
-@cached(CACHE)
+@cached(CITY_CACHE)
 def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults:
     """
     Get zip codes, province and region by city/municipality name.
-
     Args:
         city_municipality (str): city or municipality name.
-
     Returns:
         CityMunicipalityResults: List of dictionaries with zip code, province, and region.
     """
@@ -117,7 +136,7 @@ def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults
     ]
 
 
-@cached(CACHE)
+@cached(SEARCH_CACHE)
 def search(
     query: str,
     fields: Sequence[str] = DEFAULT_SEARCH_FIELDS,
@@ -142,7 +161,7 @@ def search(
     )
 
 
-@cached(CACHE)
+@cached(CITY_CACHE)
 def get_regions() -> Regions:
     """
     Get all unique regions in the Philippines.
@@ -154,7 +173,7 @@ def get_regions() -> Regions:
     )
 
 
-@cached(CACHE)
+@cached(CITY_CACHE)
 def get_provinces(region: str) -> Provinces:
     """
     Get all provinces within a specific region.
@@ -172,7 +191,7 @@ def get_provinces(region: str) -> Provinces:
     )
 
 
-@cached(CACHE)
+@cached(CITY_CACHE)
 def get_cities_municipalities(province: str) -> Cities:
     """
     Get all cities and municipalities within a specific province.
@@ -188,6 +207,3 @@ def get_cities_municipalities(province: str) -> Cities:
             if zip_code.province == province
         }
     )
-
-
-# TODO: Implement typer CLI
