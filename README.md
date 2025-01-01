@@ -39,7 +39,6 @@ print(zip_info)
 location_info = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
 print(location_details)
 # Output (list): [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
-
 ```
 
 #### 3) Search with Match Type
@@ -53,7 +52,7 @@ results = phzipcodes.search("Silang", match_type=phzipcodes.MatchType.CONTAINS)
 # ZipCode(code='4118', city_municipality='Silang', province='Cavite', region='Region 4A (CALABARZON)'))
 ```
 
-#### 4) Search with Custom Fields
+#### 4) Search in Specific Fields
 ```python
 results = phzipcodes.search(
     "Dasmariñas", 
