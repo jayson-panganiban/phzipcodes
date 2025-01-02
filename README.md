@@ -1,6 +1,14 @@
 # phzipcodes
+[![PyPI version](https://badge.fury.io/py/phzipcodes.svg)](https://badge.fury.io/py/phzipcodes)
 
-Philippines zip codes package
+`phzipcodes` is a Python package for accessing and searching Philippine zip codes. It provides functionalities to find zip codes by city, search with specific match types, and retrieve regions and provinces. This package is designed to be simple and easy to use, making it a valuable tool for developers working with Philippine address data.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
@@ -16,35 +24,49 @@ pip install phzipcodes
 
 ```python
 import phzipcodes
+```
 
-# Get zip code information
+
+#### 1) Find by Zip Code
+```python
 zip_info = phzipcodes.find_by_zip("4117")
 print(zip_info)
-# Output: ZipCode(code='4117', city_municipality='Gen. Mariano Alvarez', province='Cavite', region='Region 4A (CALABARZON)')
+# Output (object): ZipCode(code='4117', city_municipality='Gen. Mariano Alvarez', province='Cavite', region='Region 4A (CALABARZON)')
+```
 
-# Get location details by city/municipality
-location_details = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
+#### 2) Find by City/Municipality
+```python
+location_info = phzipcodes.find_by_city_municipality("Gen. Mariano Alvarez")
 print(location_details)
-# Output: [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
+# Output (list): [{'zip_code': '4117', 'province': 'Cavite', 'region': 'Region 4A (CALABARZON)'}]
+```
 
-# Search with specific match type
-results = phzipcodes.search("Manila", match_type=phzipcodes.MatchType.CONTAINS)
-for result in results:
-    print(result)
+#### 3) Search with Match Type
+```python
+results = phzipcodes.search("Silang", match_type=phzipcodes.MatchType.CONTAINS)
+# Check API Reference for MatchTypes (CONTAINS, STARTSWITH, EXACT)
 
-# Search with custom fields and exact matching
+# Output (tuple): 
+# (ZipCode(code='1119', city_municipality='Bagong Silangan', province='Metro Manila', region='NCR (National Capital Region)'), 
+# ZipCode(code='1428', city_municipality='Bagong Silang', province='Metro Manila', region='NCR (National Capital Region)'), 
+# ZipCode(code='4118', city_municipality='Silang', province='Cavite', region='Region 4A (CALABARZON)'))
+```
+
+#### 4) Search in Specific Fields
+```python
 results = phzipcodes.search(
     "Dasmariñas", 
     fields=["city_municipality"], 
     match_type=phzipcodes.MatchType.EXACT
 )
 print(results)
+```
 
-# Get geographic data
+#### 5) Get Regions, Provinces, Cities/Municipalities
+```python
 regions = phzipcodes.get_regions()
 provinces = phzipcodes.get_provinces("Region 4A (CALABARZON)")
 cities = phzipcodes.get_cities_municipalities("Cavite")
-
 ```
 
 ## API Reference
@@ -67,7 +89,7 @@ class ZipCode(BaseModel):
     region: str
 ```
 ### Functions
-### `find_by_zip`
+#### `find_by_zip()`
 ```python
 def find_by_zip(zip_code: str) -> ZipResult
 ```
@@ -78,7 +100,7 @@ Get location information by zip code.
   - `ZipCode | None` - ZipCode object or None if not found.
 
 
-### `find_by_city_municipality`
+#### `find_by_city_municipality()`
 ```python
 def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults
 ```
@@ -89,7 +111,7 @@ Get zip codes, province and region by city/municipality name.
 - **Returns**: 
   - `CityMunicipalityResults`: List of dictionaries with zip code, province, and region.
 
-### `search`
+#### `search()`
 ```python
 def search(
     query: str,
@@ -105,14 +127,14 @@ Search for zip codes based on query and criteria.
 - **Returns:** 
   - `SearchResults`: A tuple of ZipCode objects matching the query.
 
-### `get_regions`
+#### `get_regions()`
 ```python
 def get_regions() -> Regions
 ```
 Get all unique regions in the Philippines.
 - **Returns:** `Regions`: A list of unique regions.
 
-### `get_provinces`
+#### `get_provinces()`
 ```python
 def get_provinces(region: str) -> Provinces
 ```
@@ -123,7 +145,7 @@ Get all provinces within a specific region.
 - **Returns:**
   - `Provinces`: A list of provinces in the specified region
 
-### `get_cities_municipalities`
+#### `get_cities_municipalities()`
 ```python
 def get_cities_municipalities(province: str) -> CitiesMunicipalities
 ```
@@ -199,3 +221,7 @@ To keep data current, use custom scraper tool (`scraper.py`).
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
