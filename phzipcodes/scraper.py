@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 import json
 import logging
@@ -96,6 +97,8 @@ async def main(output_path: str | Path | None = None):
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    parser = argparse.ArgumentParser(description="A web scraper for zip codes")
+    parser.add_argument("-o", "--output", help="The output file path for data")
 
-# TODO: Make this a CLI tool
+    args = parser.parse_args()
+    asyncio.run(main(args.output))
