@@ -1,3 +1,4 @@
+import argparse
 import asyncio
 import json
 import logging
@@ -22,6 +23,7 @@ class ZipCode:
 
 
 BASE_URL = "https://phlpost.gov.ph/zip-code-locator/"
+DEFAULT_FILE = "ph_zip_codes.json"
 
 
 async def fetch_page(url: str) -> str:
@@ -73,7 +75,7 @@ def save_to_json(data: dict, filepath: str | Path | None = None):
     if filepath is None:
         data_dir = Path(__file__).parent / "data"
         data_dir.mkdir(parents=True, exist_ok=True)
-        filepath = data_dir / "ph_zip_codes.json"
+        filepath = data_dir / DEFAULT_FILE
     else:
         filepath = Path(filepath)
         filepath.parent.mkdir(parents=True, exist_ok=True)
@@ -96,6 +98,8 @@ async def main(output_path: str | Path | None = None):
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    parser = argparse.ArgumentParser(description="A web scraper for zip codes")
+    parser.add_argument("-o", "--output", help="The output file path for data")
 
-# TODO: Make this a CLI tool
+    args = parser.parse_args()
+    asyncio.run(main(args.output))
