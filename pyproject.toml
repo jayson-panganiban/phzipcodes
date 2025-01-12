@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phzipcodes"
-version = "0.1.7"
+version = "0.1.8"
 description = "A Python package for Philippines zip codes"
 authors = ["Jayson <jsoncp@proton.me>"]
 license = "MIT"
@@ -52,6 +52,6 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 python_classes = ["Test", "Describe"]
 python_functions = ["test_", "it_", "and_", "but_", "they_"]
-python_files = ["test_*.py",]
-testpaths = ["tests",]
+python_files = ["test_*.py"]
+testpaths = ["tests"]
 addopts = "-v --cov=phzipcodes --cov-report=term-missing --cov-report=html"
