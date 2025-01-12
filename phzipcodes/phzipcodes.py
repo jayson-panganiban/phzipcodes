@@ -11,17 +11,28 @@ from collections.abc import Callable, Sequence
 from enum import Enum
 from functools import lru_cache
 from pathlib import Path
-from typing import Final, TypeAlias
+from typing import Final, TypeAlias, TypedDict
 
 from cachetools import TTLCache, cached
 from pydantic import BaseModel, ConfigDict
 
-# Constants Configuration
+# Constants and Cache Configuration
 DATA_FILE_PATH: Final = Path(__file__).parent / "data" / "ph_zip_codes.json"
 DEFAULT_SEARCH_FIELDS: Final = ("city_municipality", "province", "region")
 
-# Cache Configuration
-CACHE_CONFIG = {
+
+class CacheConfigItem(TypedDict):
+    maxsize: int
+    ttl: float
+
+
+class CacheConfig(TypedDict):
+    zip_lookup: CacheConfigItem
+    city_lookup: CacheConfigItem
+    search: CacheConfigItem
+
+
+CACHE_CONFIG: Final[CacheConfig] = {
     "zip_lookup": {
         "maxsize": 2000,  # Common postal code lookups
         "ttl": float("inf"),  # Static data rarely changes
@@ -36,10 +47,6 @@ CACHE_CONFIG = {
     },
 }
 
-ZIP_CACHE = TTLCache(**CACHE_CONFIG["zip_lookup"])
-CITY_CACHE = TTLCache(**CACHE_CONFIG["city_lookup"])
-SEARCH_CACHE = TTLCache(**CACHE_CONFIG["search"])
-
 
 class MatchType(str, Enum):
     CONTAINS = "contains"
@@ -48,13 +55,17 @@ class MatchType(str, Enum):
 
 
 class ZipCode(BaseModel):
-    model_config = ConfigDict(frozen=True, slots=True)
+    model_config = ConfigDict(frozen=True)
 
     code: str
     city_municipality: str
     province: str
     region: str
 
+
+ZIP_CACHE: TTLCache = TTLCache(**CACHE_CONFIG["zip_lookup"])
+CITY_CACHE: TTLCache = TTLCache(**CACHE_CONFIG["city_lookup"])
+SEARCH_CACHE: TTLCache = TTLCache(**CACHE_CONFIG["search"])
 
 # Type aliases
 ZipResult: TypeAlias = ZipCode | None
@@ -124,7 +135,7 @@ def find_by_city_municipality(city_municipality: str) -> CityMunicipalityResults
         city_municipality (str): city or municipality name.
     Returns:
         CityMunicipalityResults: List of dictionaries with zip code, province, and region.
-    """
+    """  # noqa: E501
     return [
         {
             "zip_code": zip_code.code,
